@@ -1,6 +1,6 @@
 # WorldMall, A miltivendor cross-platform e-commerce web app.
 
-To get started follow those steps:
+To get started and install wordpress follow those steps:
 ### Docker:
 #### Linux <br>
 Debian based distro: 
