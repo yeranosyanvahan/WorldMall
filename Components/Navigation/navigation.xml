@@ -4,7 +4,7 @@
 </language>
 <root>
 	<categories type="text" value="Categories">
-		<restaurant_and_market>
+		<restaurant_and_market type="text" value="Categories">
 			<drinks />
 			<groceries />
 			<meals>
