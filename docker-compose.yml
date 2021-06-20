@@ -1,31 +1,9 @@
 version: '3.1'
 services:
-  wordpress:
-    image: wordpress
-    restart: always
+  web:
+    image: httpd:2.4
     ports:
-      - 8003:80
-    environment:
-      WORDPRESS_DB_HOST: mariadb
-      WORDPRESS_DB_USER: website
-      WORDPRESS_DB_PASSWORD: xMpk6w4fZUcW
-      WORDPRESS_DB_NAME: wordpress
+      - '8888:80'
     volumes:
-      - ./Website:/var/www/html
-    depends_on:
-     - mariadb
-    links:
-     - mariadb:mariadb
-
-  mariadb:
-    image: mariadb
-    restart: always
-    environment:
-      MYSQL_DATABASE: wordpress
-      MYSQL_USER: website
-      MYSQL_PASSWORD: xMpk6w4fZUcW
-      MYSQL_RANDOM_ROOT_PASSWORD: '1'
-    volumes:
-      - ./Database:/var/lib/mysql
-
+      - ./:/usr/local/apache2/htdocs/ 
 

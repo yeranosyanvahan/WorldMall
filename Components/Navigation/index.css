@@ -1,0 +1,17 @@
+body {
+	margin: 0;
+}
+nav {
+	display: flex;
+	flex-direction: column;
+}
+nav div {
+	display: flex;
+	width: 100wv;
+	margin-top: 1vh;
+	margin-left: 1vw;
+	margin-right: 1vw;
+	margin-left: 1vw;
+	background-color: orange;
+	justify-content: space-between;
+}
