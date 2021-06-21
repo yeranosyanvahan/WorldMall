@@ -4,22 +4,50 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>ARUTUR</title>
 	<link rel="stylesheet" href="index.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		jQuery.fn.tagName = function() {
+			return this.prop("tagName");
+		};
+		(function(old) {
+			$.fn.attr = function() {
+				if(arguments.length === 0) {
+					if(this.length === 0) {
+						return null;
+					}
+				    var obj = {};
+					$.each(this[0].attributes, function() {
+						if(this.specified) {
+							obj[this.name] = this.value;
+					}});
+					return obj;
+				}
+				return old.apply(this, arguments);
+			};
+		})($.fn.attr);</script>
  	<script src="./index.js"></script>
  	<script type="text/javascript">
-
-	$.getJSON("./navigation.json", function(result){
-      CategoryGeneration(result);
-    });
+ 		var XML
+ 		$.ajax ({
+ 			url: 'navigation.xml',
+ 			dataType:'xml',
+ 			success: function(data) {
+ 				XML = $(data)
+ 				XMLCategoryGeneration($(XML).children().first())
+ 			},
+ 			error: function() {
+ 				console.log('error')
+ 			}
+ 		})
 
  	</script>
+
+
+
 </head>
 <body>
-	<div>
-		
-	</div>
 	<nav>
 		
 	</nav>

@@ -1,53 +1,50 @@
 //Recursive function for adding elements
-function MenuGeneration(json,attr={}){
-	var div=jQuery('<div/>', attr)
-	for (const each in json) {
+function XMLMenuGeneration(XML,divattr={}){
+	var div=jQuery('<div/>', divattr)
+	$(XML).children().each(function(){
+		var Attr=$(this).attr()
+		var Tagname=$(this).tagName()
+		Attr['id']=Tagname.replace(/ /g,"_")
+		jQuery(`<${Attr['type']}/>`, Attr).appendTo(div);
 
-		jQuery('<text/>', {text:each, id:each.replace(/ /g,"_")}).appendTo(div);
-	}
+	});
 	return div
 }
 
-// Hovering Motion of json data
-function SetHover(json, classname='navigation') {
-	if(json==null)
+// Hovering Motion of XML data
+function XMLSetHover(XML, classname='navigation') {
+	if($(XML).children().length==0)
 	{
 		return
 	}
-	
-	// Adding json Elements
-	for (const test in json) {
+	// Adding XML Elements
+	$(XML).children().each(function(tag){
+		let child=$(XML).children()[tag]
+		if (child.children.length != 0) {
+			let test_id=child.tagName.replace(/ /g,"_")
 
-		if (json[test] == null) {
-			continue
+			$(`nav div ${$(child).attr('type')}#`+test_id).hover(function(){
+				let classes=classname.split(' ')		
+				if(! $('nav div#'+test_id).length){
+					$('nav div.'+classes[classes.length-1]).slideUp("normal", function() { $(this).remove(); } );
+					XMLMenuGeneration($(XML).children()[tag],{id:test_id,class:classname}).hide().appendTo('nav').slideDown("show");
+					XMLSetHover($(XML).children()[tag],classname+" "+test_id)
+				}
+			});
 		}
-
-		let test_id=test.replace(/ /g,"_");
-		$('nav div text#'+test_id).hover(function(){
-
-			let classes=classname.split(' ')
-			
-			if(! $('nav div#'+test_id).length){
-
-				$('nav div.'+classes[classes.length-1]).slideUp("normal", function() { $(this).remove(); } );
-				MenuGeneration(json[test],{id:test_id,class:classname}).hide().appendTo('nav').slideDown("show");
-				SetHover(json[test],classname+" "+test_id)
-			}
-		});
-	}
+	});
 }
 
-// Start of Jquery
-function CategoryGeneration(Navigation) {
+// The navigation bar generation
+function XMLCategoryGeneration(Navigation) {
 
-	MenuGeneration(Navigation).appendTo("nav");
-
+	XMLMenuGeneration(Navigation).appendTo("nav");
 
 	// Removeing Navigation Elements when not in focus
 	$("body nav").hover(function(){},function(){
 		$(this).children().slice(1).slideUp("normal", function() { $(this).remove(); } );
 	});
 
-	SetHover(Navigation)
+	XMLSetHover(Navigation)
 
 };		
