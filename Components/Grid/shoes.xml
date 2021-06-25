@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root  lang="en" decoder='shoes'>
+	<product>
+		<description>Amazon Essentials Men's Canvas Slip-on Loafer</description>
+		<picture src="https://m.media-amazon.com/images/I/81WjXgpKX4L._AC_UL320_.jpg"/>
+		<price>33.</price>
+	</product>
+	<product>
+		<description>New Balance Men's 623 V3 Casual Comfort Cross Trainer</description>
+		<picture src="https://m.media-amazon.com/images/I/81+SwSx8DSL._AC_UL320_.jpg"/>
+		<price>-999</price>
+	</product>
+	<product>
+		<description>New Balance Men's 481 V3 Trail Running Shoe</description>
+		<picture src="https://m.media-amazon.com/images/I/81UcrwrbvgL._AC_UL320_.jpg"/>
+		<price>-999</price>
+	</product>
+	<product>
+		<description>Rockport Men's Eureka Walking Shoe</description>
+		<picture src="https://m.media-amazon.com/images/I/61rtuwpKtoL._AC_UL320_.jpg"/>
+		<price>52.</price>
+	</product>
+	<product>
+		<description>New Balance Women's FuelCore Nergize Sport V1 Sneaker</description>
+		<picture src="https://m.media-amazon.com/images/I/61bAKK7+y3L._AC_UL320_.jpg"/>
+		<price>54.</price>
+	</product>
+	<product>
+		<description>adidas Women's Duramo Sl Running Shoe</description>
+		<picture src="https://m.media-amazon.com/images/I/71P5P2KtS-L._AC_UL320_.jpg"/>
+		<price>58.</price>
+	</product>
+	<product>
+		<description>Lacoste Men's Bayliss Sneaker</description>
+		<picture src="https://m.media-amazon.com/images/I/61HdMP5n32L._AC_UL320_.jpg"/>
+		<price>71.</price>
+	</product>
+	<product>
+		<description>Skechers Men's Afterburn Memory-Foam Lace-up Sneaker</description>
+		<picture src="https://m.media-amazon.com/images/I/71+BksVBGTL._AC_UL320_.jpg"/>
+		<price>42.</price>
+	</product>
+	<product>
+		<description>adidas Men's Lite Racer Adapt 3.0 Running Shoe</description>
+		<picture src="https://m.media-amazon.com/images/I/71witg-CFQL._AC_UL320_.jpg"/>
+		<price>-999</price>
+	</product>
+	<product>
+		<description>adidas Women's Cloudfoam Pure Running Shoe</description>
+		<picture src="https://m.media-amazon.com/images/I/71G0sB8FnFL._AC_UL320_.jpg"/>
+		<price>43.</price>
+	</product>
+	<product>
+		<description>Under Armour Men's Charged Pursuit 2 Running Shoe</description>
+		<picture src="https://m.media-amazon.com/images/I/711P7s-h47S._AC_UL320_.jpg"/>
+		<price>70.</price>
+	</product>
+	<product>
+		<description>Under Armour Men's Charged Assert 8 Mrble Running Shoe</description>
+		<picture src="https://m.media-amazon.com/images/I/51fjQKot6RL._AC_UL320_.jpg"/>
+		<price>38.</price>
+	</product>
+	<product>
+		<description>Skechers Women's Go Walk Joy Walking Shoe</description>
+		<picture src="https://m.media-amazon.com/images/I/81kmU+BpSQL._AC_UL320_.jpg"/>
+		<price>39.</price>
+	</product>
+	<product>
+		<description>Concept 3 by Skechers Men's Eakins Lace-up Sneaker</description>
+		<picture src="https://m.media-amazon.com/images/I/7122TK8dCTS._AC_UL320_.jpg"/>
+		<price>41.</price>
+	</product>
+	<product>
+		<description>Under Armour Men's Surge 2 Running Shoe</description>
+		<picture src="https://m.media-amazon.com/images/I/71Fom1cc1TS._AC_UL320_.jpg"/>
+		<price>44.</price>
+	</product>
+	<product>
+		<description>adidas Men's Advantage Sneaker</description>
+		<picture src="https://m.media-amazon.com/images/I/61B4QM1axWL._AC_UL320_.jpg"/>
+		<price>40.</price>
+	</product>
+	<product>
+		<description>Skechers Men's Go Walk Evolution Ultra - Impeccable Walking Shoe</description>
+		<picture src="https://m.media-amazon.com/images/I/81HctfkLf7L._AC_UL320_.jpg"/>
+		<price>46.</price>
+	</product>
+	<product>
+		<description>adidas Men's Tech Response Golf Shoes</description>
+		<picture src="https://m.media-amazon.com/images/I/81oxMLJkJNL._AC_UL320_.jpg"/>
+		<price>69.</price>
+	</product>
+	<product>
+		<description>Reebok Women's Princess-Sneaker Casual Joggers</description>
+		<picture src="https://m.media-amazon.com/images/I/51UaBdEHuiL._AC_UL320_.jpg"/>
+		<price>35.</price>
+	</product>
+	<product>
+		<description>Under Armour Men's Charged Pursuit 2 Special Edition Running Shoe</description>
+		<picture src="https://m.media-amazon.com/images/I/81o1HrRseQL._AC_UL320_.jpg"/>
+		<price>70.</price>
+	</product>
+	<product>
+		<description>New Balance Men's Fresh Foam Arishi V3 Running Shoe</description>
+		<picture src="https://m.media-amazon.com/images/I/71BqvFUcgoL._AC_UL320_.jpg"/>
+		<price>64.</price>
+	</product>
+	<product>
+		<description>adidas Women's Grand Court Sneaker</description>
+		<picture src="https://m.media-amazon.com/images/I/71qdoDlEOpL._AC_UL320_.jpg"/>
+		<price>59.</price>
+	</product>
+	<product>
+		<description>KEEN Men's SOLR High Performance Sport Closed Toe Water Sandal</description>
+		<picture src="https://m.media-amazon.com/images/I/71-i+xe5tiS._AC_UL320_.jpg"/>
+		<price>-999</price>
+	</product>
+	<product>
+		<description>adidas Men's Response Super Running Shoe</description>
+		<picture src="https://m.media-amazon.com/images/I/81v889LEUyL._AC_UL320_.jpg"/>
+		<price>-999</price>
+	</product>
+	<product>
+		<description>New Balance Men's 608 V5 Casual Comfort Cross Trainer</description>
+		<picture src="https://m.media-amazon.com/images/I/71I2Hf4x0SL._AC_UL320_.jpg"/>
+		<price>54.</price>
+	</product>
+	<product>
+		<description>Steve Madden Men's Fenta Fashion Sneaker</description>
+		<picture src="https://m.media-amazon.com/images/I/813UuOjWfZL._AC_UL320_.jpg"/>
+		<price>54.</price>
+	</product>
+	<product>
+		<description>Rockport Men's Eureka Walking Shoe</description>
+		<picture src="https://m.media-amazon.com/images/I/61rtuwpKtoL._AC_UL320_.jpg"/>
+		<price>52.</price>
+	</product>
+	<product>
+		<description>Emeril Lagasse Men's Cooper Pro EVA Food Service Shoe, Black, 13</description>
+		<picture src="https://m.media-amazon.com/images/I/71mia50hAGL._AC_UL320_.jpg"/>
+		<price>34.</price>
+	</product>
+	<product>
+		<description>Capezio Men's SD103 Social Dance Shoe</description>
+		<picture src="https://m.media-amazon.com/images/I/81i9iGLUWnL._AC_UL320_.jpg"/>
+		<price>70.</price>
+	</product>
+	<product>
+		<description>Rockport Men's Darwyn Fishermen Sandal</description>
+		<picture src="https://m.media-amazon.com/images/I/81W7RAfDWKL._AC_UL320_.jpg"/>
+		<price>71.</price>
+	</product>
+	<product>
+		<description>Under Armour Men's Charged Assert 9 Running Shoe</description>
+		<picture src="https://m.media-amazon.com/images/I/71oNa25Pz2L._AC_UL320_.jpg"/>
+		<price>52.</price>
+	</product>
+	<product>
+		<description>adidas Women's Cloudfoam Pure 2.0 Running Shoes</description>
+		<picture src="https://m.media-amazon.com/images/I/71HsKn-2HjS._AC_UL320_.jpg"/>
+		<price>69.</price>
+	</product>
+	<product>
+		<description>Skechers Men's Go Max-Athletic Air Mesh Slip on Walking Shoe</description>
+		<picture src="https://m.media-amazon.com/images/I/71hdDHmI4CS._AC_UL320_.jpg"/>
+		<price>39.</price>
+	</product>
+	<product>
+		<description>Skechers Men's Classic Fit-delson-Camden Sneaker</description>
+		<picture src="https://m.media-amazon.com/images/I/813N4tHPOKL._AC_UL320_.jpg"/>
+		<price>49.</price>
+	</product>
+	<product>
+		<description>New Balance Women's FuelCore Nergize V1 Sneaker</description>
+		<picture src="https://m.media-amazon.com/images/I/71GyzXlZlRL._AC_UL320_.jpg"/>
+		<price>64.</price>
+	</product>
+	<product>
+		<description>Hey Dude Men's Wally Sox Loafer</description>
+		<picture src="https://m.media-amazon.com/images/I/817lwe2y3AL._AC_UL320_.jpg"/>
+		<price>-999</price>
+	</product>
+	<product>
+		<description>New Balance Men's 680v6 Cushioning Running Shoe</description>
+		<picture src="https://m.media-amazon.com/images/I/71z915DDAIL._AC_UL320_.jpg"/>
+		<price>-999</price>
+	</product>
+	<product>
+		<description>adidas Men's Grand Court Sneaker</description>
+		<picture src="https://m.media-amazon.com/images/I/61FbqzPD8TL._AC_UL320_.jpg"/>
+		<price>55.</price>
+	</product>
+	<product>
+		<description>Ryka Women's Devotion Plus 3 Walking Shoe</description>
+		<picture src="https://m.media-amazon.com/images/I/81Czh3+lZEL._AC_UL320_.jpg"/>
+		<price>73.</price>
+	</product>
+	<product>
+		<description>New Balance Women's 411 V1 Walking Shoe</description>
+		<picture src="https://m.media-amazon.com/images/I/71kN6GMBVRL._AC_UL320_.jpg"/>
+		<price>-999</price>
+	</product>
+	<product>
+		<description>Skechers Men's Cessnock Food Service Shoe</description>
+		<picture src="https://m.media-amazon.com/images/I/61XpDRTeG-L._AC_UL320_.jpg"/>
+		<price>50.</price>
+	</product>
+	<product>
+		<description>Skechers Men's Expected Avillo</description>
+		<picture src="https://m.media-amazon.com/images/I/71R82qHGjUL._AC_UL320_.jpg"/>
+		<price>42.</price>
+	</product>
+	<product>
+		<description>Fila Men’s Memory Workshift Slip Resistant Work Shoe</description>
+		<picture src="https://m.media-amazon.com/images/I/81Bz-5vMe2L._AC_UL320_.jpg"/>
+		<price>33.</price>
+	</product>
+	<product>
+		<description>ASICS Men's Gel-Venture 7 Running Shoes</description>
+		<picture src="https://m.media-amazon.com/images/I/716BP19aFpL._AC_UL320_.jpg"/>
+		<price>-999</price>
+	</product>
+	<product>
+		<description>Timberland Men's White Ledge Mid Waterproof Ankle Boot</description>
+		<picture src="https://m.media-amazon.com/images/I/71iWLNVDL3L._AC_UL320_.jpg"/>
+		<price>99.</price>
+	</product>
+	<product>
+		<description>Clarks Women's Breeze Sea</description>
+		<picture src="https://m.media-amazon.com/images/I/71ragcm5yqL._AC_UL320_.jpg"/>
+		<price>39.</price>
+	</product>
+	<product>
+		<description>Skechers Women's Squad Sr Food Service Shoe</description>
+		<picture src="https://m.media-amazon.com/images/I/81MExQv49WL._AC_UL320_.jpg"/>
+		<price>42.</price>
+	</product>
+	<product>
+		<description>Saucony Men's Cohesion 13 Walking Shoe</description>
+		<picture src="https://m.media-amazon.com/images/I/81pu1m3lpgL._AC_UL320_.jpg"/>
+		<price>-999</price>
+	</product>
+	<product>
+		<description>Rockport Men's Chranson Walking Shoe</description>
+		<picture src="https://m.media-amazon.com/images/I/81gKrn3TI+L._AC_UL320_.jpg"/>
+		<price>60.</price>
+	</product>
+	<product>
+		<description>adidas outdoor Men's Terrex Ax3 Hiking Boot</description>
+		<picture src="https://m.media-amazon.com/images/I/81JVjPdq3iL._AC_UL320_.jpg"/>
+		<price>-999</price>
+	</product>
+	<product>
+		<description>adidas Men's Daily 3.0 Skate Shoe</description>
+		<picture src="https://m.media-amazon.com/images/I/8176OVh-gaL._AC_UL320_.jpg"/>
+		<price>-999</price>
+	</product>
+	<product>
+		<description>Skechers Women's D'Lites Memory Foam Lace-up Sneaker</description>
+		<picture src="https://m.media-amazon.com/images/I/61bBZe-hCrL._AC_UL320_.jpg"/>
+		<price>45.</price>
+	</product>
+	<product>
+		<description>Under Armour Men's Ignite Vi Graphic Strap Slide Sandal</description>
+		<picture src="https://m.media-amazon.com/images/I/71k-z2Zd-wL._AC_UL320_.jpg"/>
+		<price>34.</price>
+	</product>
+	<product>
+		<description>Concept 3 by Skechers Men's Naiter Mesh Slip-on Casual Sneaker</description>
+		<picture src="https://m.media-amazon.com/images/I/81vcx6kwr8S._AC_UL320_.jpg"/>
+		<price>40.</price>
+	</product>
+	<product>
+		<description>Crocs Unisex Bistro Batali Edition Clog</description>
+		<picture src="https://m.media-amazon.com/images/I/81-EqlhSNrL._AC_UL320_.jpg"/>
+		<price>49.</price>
+	</product>
+	<product>
+		<description>Capezio Women's CG17 Fluid Tap Shoe</description>
+		<picture src="https://m.media-amazon.com/images/I/71Papil8A9L._AC_UL320_.jpg"/>
+		<price>55.</price>
+	</product>
+	<product>
+		<description>Dance Class Low Profile Jazz Shoe (Toddler/Little Kid)</description>
+		<picture src="https://m.media-amazon.com/images/I/817YbxNjYbL._AC_UL320_.jpg"/>
+		<price>27.</price>
+	</product>
+	<product>
+		<description>Fila Men’s Memory Workshift Slip Resistant Work Shoe</description>
+		<picture src="https://m.media-amazon.com/images/I/61U5JL9EZTL._AC_UL320_.jpg"/>
+		<price>36.</price>
+	</product>
+	<product>
+		<description>Rockport Men's Rocklake Flat Sandal</description>
+		<picture src="https://m.media-amazon.com/images/I/71pi-dQZgoL._AC_UL320_.jpg"/>
+		<price>48.</price>
+	</product>
+	<product>
+		<description/>
+		<picture src="https://m.media-amazon.com/images/I/61YWoo-3NTL._AC_SL139_QL70_.jpg"/>
+		<price>-999</price>
+	</product>
+	<կոշիկ>
+		<նկարագրություն>կոշիկ</նկարագրություն>
+		<նկար src="https://m.media-amazon.com/images/I/71pi-dQZgoL._AC_UL320_.jpg"/>
+		<գին>100</գին>
+	</կոշիկ>
+</root>

@@ -13,5 +13,6 @@ nav div {
 	margin-right: 1vw;
 	margin-left: 1vw;
 	background-color: orange;
-	justify-content: space-between;
+	justify-content: space-around;
+	flex-wrap: wrap;
 }
