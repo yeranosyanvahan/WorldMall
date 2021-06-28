@@ -29,14 +29,16 @@
 	<script src='./decoder.js'></script>
 	<script type="text/javascript">
  		$.ajax ({
- 			url: 'shoes.xml',
+ 			url: '../XML/shoes.xml',
  			dataType:'xml',
  			success: function(data) {
  				root=$(data).children().first()
  				var main=$("<main />", {class:'counter'})
  				decoder=$(root).attr('decoder')
+ 				category=$(root).attr('category')
  				root.children().each(function(tag){main.append(eval(decoder+'($(this))'))})
  				main.appendTo('#show');
+ 				$('#show legend').html(category);
  			},
  			error: function() {
  				alert("Something Went Wrong, Please try refreshing the page")
@@ -45,7 +47,7 @@
   </head>
   <body>   
    <fieldset id='show'>
-   	<legend style="font-size: 2rem; margin-left: calc(50% - 35px - 8px);"> Shoes</legend>
+   	<legend style="font-size: 2rem; margin-left: calc(50% - 35px - 8px);"></legend>
    </fieldset>
   </body>
 </html>

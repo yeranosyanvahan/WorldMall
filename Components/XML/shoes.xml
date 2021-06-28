@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<root  lang="en" decoder='shoes'>
+<root  lang="en" decoder='shoes' category='Shoes'>
 	<product>
 		<description>Amazon Essentials Men's Canvas Slip-on Loafer</description>
 		<picture src="https://m.media-amazon.com/images/I/81WjXgpKX4L._AC_UL320_.jpg"/>

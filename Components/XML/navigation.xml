@@ -13,8 +13,9 @@
 			<desserts_cakes_and_ice_creams  type="text" text="Desserts Cakes and Ice creams"/>
 		</restaurant_and_market>
 		<clothes_and_fashion type="text" text="Clothes and Fashion">
-			<woman type="text" text="Woman"/>
-			<man type="text" text="Man"/>
+			<shoes type="text" text="Shoes" />
+			<pants type="text" text="Pants" />
+			<shirts type="text" text="Shirts" />
 		</clothes_and_fashion>
 		<medicine_and_self_care type="text" text="Medicine and Self-Care" />
 		<toys_books_tools type="text" text="Toys Books and Tools" />

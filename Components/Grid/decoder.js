@@ -14,7 +14,7 @@ function shoes(shoe){
 	let description, picture, price;
 	[description, picture, price]=shoe.children();
 	description=jQuery(`<div />`,Object.assign($(description).attr(),{text:$(description).text()}));
-	picture=jQuery(`<img />`,{src:$(picture).attr('src'), style: 'opacity:var(--product-opacity);'});
+	picture=jQuery(`<img />`,{src:$(picture).attr('src'), style: 'opacity:var(--product-opacity); width:100%'});
 	price=jQuery(`<price />`,{text:$(price).text()+'$'});
 	Return.append([
 	description, 
