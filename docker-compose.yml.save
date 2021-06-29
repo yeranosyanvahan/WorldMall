@@ -2,7 +2,7 @@ version: '3.1'
 services:
   web:
     image: httpd:2.4
-    ports:
+   ports:
       - 8888:80
     volumes:
       - ./:/usr/local/apache2/htdocs/ 
@@ -12,8 +12,13 @@ services:
     ports:
       - 8000:8000
       - 8080:8080
+      - 5080:5080
+    volumes:
+     - dgraph:/dgraph
 
   rabbitmq:
     image: rabbitmq:3
     hostname: myrabbit
 
+volumes:
+ dgraph:
