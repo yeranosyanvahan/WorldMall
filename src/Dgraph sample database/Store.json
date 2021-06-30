@@ -1,3 +1,14 @@
 {"set":[{
-"shop_nane"	
+"shop_name":"MIOM LLC",
+"category":"ISP",
+"working_hours":"9-18",
+"geolocation": 
+	{
+	"type": "Point",
+	"coordinates": 
+		[
+		45.298571,
+		40.144852
+		]
+	}
 }]}
