@@ -1,0 +1,18 @@
+{
+	find_all_categories(func: has(category))
+	{
+	name:category,
+	sub:subcategories
+		{
+		category
+		}	
+	},
+	find_all_shops(func: has(category))
+	{
+	name:category,
+	sub:subcategories
+		{
+		category
+		}	
+	}
+}

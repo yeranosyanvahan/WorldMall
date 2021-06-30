@@ -27,6 +27,8 @@
 	"category":"clothes_and_fashion",
 	"subcategories":
 		[{
+		"category":"shoes"
+		},{
 		"category":"woman"
 		},{
 		"category":"man"
