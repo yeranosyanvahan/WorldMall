@@ -3,7 +3,13 @@ services:
   web:
     image: httpd:2.4
     ports:
-      - '8888:80'
+      - 8880:80
     volumes:
       - ./:/usr/local/apache2/htdocs/ 
+
+  dgraph:
+    image: dgraph/standalone:v21.03.0
+    ports:
+      - 8000:8000
+      - 8080:8080
 

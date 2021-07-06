@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counters</title>
+	<link rel="stylesheet" href="index.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		jQuery.fn.tagName = function() {
+			return this.prop("tagName");
+		};
+		(function(old) {
+			$.fn.attr = function() {
+				if(arguments.length === 0) {
+					if(this.length === 0) {
+						return null;
+					}
+				    var obj = {};
+					$.each(this[0].attributes, function() {
+						if(this.specified) {
+							obj[this.name] = this.value;
+					}});
+					return obj;
+				}
+				return old.apply(this, arguments);
+			};
+		})($.fn.attr);</script>
+	<script src='./decoder.js'></script>
+	<script type="text/javascript">
+ 		$.ajax ({
+ 			url: '../XML/shoes.xml',
+ 			dataType:'xml',
+ 			success: function(data) {
+ 				root=$(data).children().first()
+ 				var main=$("<main />", {class:'counter'})
+ 				decoder=$(root).attr('decoder')
+ 				category=$(root).attr('category')
+ 				root.children().each(function(tag){main.append(eval(decoder+'($(this))'))})
+ 				main.appendTo('#show');
+ 				$('#show legend').html(category);
+ 			},
+ 			error: function() {
+ 				alert("Something Went Wrong, Please try refreshing the page")
+ 			}
+ 		}) 	</script>
+  </head>
+  <body>   
+   <fieldset id='show'>
+   	<legend style="font-size: 2rem; margin-left: calc(50% - 35px - 8px);"></legend>
+   </fieldset>
+  </body>
+</html>

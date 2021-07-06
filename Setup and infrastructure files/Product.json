@@ -1,0 +1,8 @@
+{"set":[{
+"name":"shoe",
+//"category": -- category
+//"shops": == list of shops the shoe is in
+"Properties" :{
+ // some additional properties which is category related
+}
+}]}
