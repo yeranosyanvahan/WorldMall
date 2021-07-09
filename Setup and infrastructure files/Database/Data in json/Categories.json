@@ -1,0 +1,65 @@
+{"set":[{
+"category":"category",
+"subcategories":
+	[{
+	"category":"restaurant_and_market",
+	"subcategories":
+		[{
+		"category":"drinks"
+		},{
+		"category":"groceries"
+		},{
+		"category":"meals",
+		"subcategories":
+			[{
+			"category":"fast_food"
+			},{
+			"category":"organic_food"
+			}]
+		},{
+		"category":"cigarete_and_lighters"
+		},{
+		"category":"canned_frozen_and_dried_food"
+		},{
+		"category":"desserts_and_ice_creams"
+		}]
+	},{
+	"category":"clothes_and_fashion",
+	"subcategories":
+		[{
+		"category":"shoes"
+		},{
+		"category":"woman"
+		},{
+		"category":"man"
+		}]
+	},{
+	"category":"medicine_and_self_care"
+	},{
+	"category":"toys_books_tools"
+	},{
+	"category":"electronics_and_accessories"
+	},{
+	"category":"furniture_and_appliances"
+	},{
+	"category":"gift_and_souvenears"
+	},{
+	"category":"services",
+	"subcategories":
+		[{
+		"category":"delivery"
+		},{
+		"category":"taxi"
+		}]
+	},{
+	"category":"other",
+	"subcategories":
+		[{
+		"category":"car shop"
+		},{
+		"category":"pet shop"
+		},{
+		"category":"children food"
+		}]
+	}]
+}]}

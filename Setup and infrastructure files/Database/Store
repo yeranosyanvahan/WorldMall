@@ -1,0 +1,5 @@
+_:store <dgraph.type> "store" .
+_:store <geolocation>  "{'type':'Point','coordinates':[45.298571,40.144852]}"^^<geo:geojson> .
+_:store <store> "MIOM" .
+
+

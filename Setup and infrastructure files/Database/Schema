@@ -1,0 +1,43 @@
+
+# QUERY TYPE: ALTER
+
+# Define Types
+
+
+type Category {
+    category
+    subcategory
+}
+
+type City {
+    city
+    location
+}
+
+type Store {
+    store
+    location
+    info
+}
+
+type Product {
+    product
+}
+
+type Property {
+    property
+    products
+}
+
+# Define Directives and index
+
+category: string .
+city: string .
+store: string .
+product: string .
+property: string .
+
+subcategory: [uid] .
+location: geo .
+info: [default] .
+products: [uid] .
