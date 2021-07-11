@@ -1,43 +1,50 @@
-
 # QUERY TYPE: ALTER
-
 # Define Types
 
-
 type Category {
-    category
+    category   # search by laveshtain distance
     subcategory
+    products
 }
 
+
 type City {
-    city
-    location
+    city      # search this too
+    geolocation
+    stores
 }
 
 type Store {
-    store
-    location
+    store     # and this
+    class
+    geolocation
     info
 }
 
 type Product {
     product
+    stores
 }
 
 type Property {
-    property
+    property  # and this
     products
+    info
 }
 
 # Define Directives and index
 
-category: string .
-city: string .
-store: string .
-product: string .
-property: string .
+category: String @index(trigram) .
+city: String @index(trigram) .
+store: String @index(trigram) .
+property: String @index(trigram) .
 
+product: String @index(term,fulltext) .
+class: uid .
+
+stores: [uid] @reverse .
 subcategory: [uid] .
-location: geo .
+geolocation: geo .
 info: [default] .
-products: [uid] .
+products: [uid] @reverse .
+

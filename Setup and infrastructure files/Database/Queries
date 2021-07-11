@@ -1,0 +1,41 @@
+{
+Products(func: has(product)) 
+{
+  product
+  ~products @facets(<src>)
+  {
+    expand(Property,Category)
+  }
+  stores @facets(<price>)
+  {
+    expand(Store)
+  }
+},
+
+Categories(func: has(category))
+{
+  category,
+  subcategory 
+  {
+    category
+  }
+},
+
+Prices(func: has(product)) @cascade
+{
+  product
+  stores @facets(eq(price,-999)) 
+  {
+    expand(Store)
+  }
+},
+
+Autocomplete(func: match(category, "shoe", 10))  #category city property and store
+{
+ expand(Category)
+},
+
+Search(func: alloftext("ss",product))
+{
+  product
+}}

@@ -3,6 +3,7 @@ _:category <dgraph.type> "category" .
 _:category <subcategory> _:restaurant_and_market .
 _:category <subcategory> _:clothes_and_fashion .
 _:category <subcategory> _:medicine_and_self_care .
+_:category <subcategory> _:household_items .
 _:category <subcategory> _:toys_books_tools .
 _:category <subcategory> _:electronics_and_accessories .
 _:category <subcategory> _:furniture_and_appliances .
@@ -48,24 +49,23 @@ _:desserts_and_ice_creams <dgraph.type> "category" .
 _:clothes_and_fashion <category> "clothes_and_fashion" . 
 _:clothes_and_fashion <dgraph.type> "category" .
 _:clothes_and_fashion <subcategory> _:shoes .
-_:clothes_and_fashion <subcategory> _:shirts .
-_:clothes_and_fashion <subcategory> _:skirts .
-_:clothes_and_fashion <subcategory> _:pants .
+_:clothes_and_fashion <subcategory> _:woman .
+_:clothes_and_fashion <subcategory> _:man .
 
-_:shoes <category> "shoes" .
+_:shoes <category> "shoes" . 
 _:shoes <dgraph.type> "category" .
 
-_:shirts <category> "shirts" .
-_:shirts <dgraph.type> "category" .
+_:woman <category> "woman" . 
+_:woman <dgraph.type> "category" .
 
-_:skirts <category> "skirts" .
-_:skirts <dgraph.type> "category" .
-
-_:pants <category> "pants" .
-_:pants <dgraph.type> "category" .
+_:man <category> "man" . 
+_:man <dgraph.type> "category" .
 
 _:medicine_and_self_care <category> "medicine_and_self_care" . 
 _:medicine_and_self_care <dgraph.type> "category" .
+
+_:household_items <category> "household_items" . 
+_:household_items <dgraph.type> "category" .
 
 _:toys_books_tools <category> "toys_books_tools" . 
 _:toys_books_tools <dgraph.type> "category" .

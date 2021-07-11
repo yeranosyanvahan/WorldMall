@@ -36,6 +36,8 @@
 	},{
 	"category":"medicine_and_self_care"
 	},{
+	"category":"household_items"
+	},{
 	"category":"toys_books_tools"
 	},{
 	"category":"electronics_and_accessories"
@@ -55,11 +57,11 @@
 	"category":"other",
 	"subcategories":
 		[{
-		"category":"car shop"
+		"category":"car_shop"
 		},{
-		"category":"pet shop"
+		"category":"pet_shop"
 		},{
-		"category":"children food"
+		"category":"children_food"
 		}]
 	}]
 }]}
