@@ -4,11 +4,12 @@ import random
 from os import listdir
 from os.path import isfile
 
-files=[file for file in listdir() if isfile(file)]
+files=['Categories','Product','Store','Properties']+['Schema']
 Files={}
 for file in files:
-    with open(f"./{file}","r") as read:
-         Files[file]=read.read()
+    F = open(f"./{file}", encoding="utf-8")
+    Files[file]=F.read()
+    F.close()
 
 client_stub = pydgraph.DgraphClientStub('127.0.0.1:9080')
 client = pydgraph.DgraphClient(client_stub)

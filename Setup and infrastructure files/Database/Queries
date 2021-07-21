@@ -11,7 +11,6 @@ Products(func: has(product))
     expand(Store)
   }
 },
-
 Categories(func: has(category))
 {
   category,
@@ -30,12 +29,14 @@ Prices(func: has(product)) @cascade
   }
 },
 
-Autocomplete(func: match(category, "shoe", 10))  #category city property and store
+Autocomplete(func: match(category, "shoe", 4))  #category city property and store
 {
  expand(Category)
 },
 
-Search(func: alloftext("ss",product))
+Search(func: alloftext(product,"shoes adidas"))
 {
   product
+  stores @facets {store}
+  ~products @facets {property}
 }}
