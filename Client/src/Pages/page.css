@@ -1,0 +1,29 @@
+/* For forms */
+.preforum {
+  display: grid;
+  align-content: space-between;
+  justify-items: center;
+  padding-bottom:3rem;
+}
+form {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+}
+form fieldset {
+  display: flex;
+  flex-direction: column;
+}
+form  input  {
+ margin-bottom: 10px;
+ font-size: 1em;
+}
+form input[type="submit"] {
+margin-top: 1em;
+}
+.required:after {
+  content:" *";
+  color: red;
+  font-size: 0.5rem
+}

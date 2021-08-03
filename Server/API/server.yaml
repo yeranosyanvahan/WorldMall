@@ -1,0 +1,16 @@
+Secret: "secret"
+Server:
+  Port: 4000
+
+#Frontend React app
+Client:
+  hostname:
+    - 'http://localhost:3000'
+    - 'https://localhost:3000'
+  redirect:
+    'http://localhost:3000'
+
+#Database
+Dgraph:
+  hostname:
+    'localhost:8000'
