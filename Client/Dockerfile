@@ -5,6 +5,5 @@ RUN npm install
 RUN npm run build
 
 FROM httpd:2.4
+EXPOSE 80
 COPY --from=build /app/build /usr/local/apache2/htdocs/
-EXPOSE 4000
-
