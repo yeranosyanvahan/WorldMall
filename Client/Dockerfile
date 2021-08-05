@@ -12,12 +12,25 @@ RUN sed -i \
         -e 's/^#\(Include .*httpd-ssl.conf\)/\1/' \
         -e 's/^#\(LoadModule .*mod_ssl.so\)/\1/' \
         -e 's/^#\(LoadModule .*mod_socache_shmcb.so\)/\1/' \
+        -e 's/^#\(LoadModule .*mod_rewrite.so\)/\1/' \
         conf/httpd.conf
 
-RUN echo "<VirtualHost *:80>  \n\
-	  ServerName example.com \n\
-	  ServerAlias www.example.com \n\
-	  Redirect permanent / https://example.com/  \n\
-	</VirtualHost>" >> conf/extra/httpd-ssl.conf
+RUN sed -e "s/<\/VirtualHost>//g" -i conf/extra/httpd-ssl.conf
+
+RUN echo " \n\
+<IfModule rewrite_module> \n\
+    RewriteEngine On \n\
+        RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR] \n\
+        RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d \n\
+        RewriteRule ^ - [L] \n\
+    RewriteRule ^ /index.html \n\
+</IfModule> \n\
+</VirtualHost> \n\
+<VirtualHost *:80>  \n\
+  ServerName sell.miom.am \n\
+  ServerAlias www.sell.miom.am \n\
+  Redirect permanent / https://sell.miom.am/  \n\
+</VirtualHost> \n\
+" >> conf/extra/httpd-ssl.conf
 
 COPY --from=build /app/build /usr/local/apache2/htdocs/
