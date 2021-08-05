@@ -1,4 +1,4 @@
-version: "3"
+version: "3.4"
 
 services:
 
@@ -6,10 +6,13 @@ services:
     build:
       context: './Client'
     ports:
-      - 3000:80
+      - 80:80
+      - 443:443
     restart: on-failure
-    depends_on:
-      - api 
+    volumes:
+      - ./Certificates/server.key:/usr/local/apache2/conf/server.key
+      - ./Certificates/server.crt:/usr/local/apache2/conf/server.crt
+
 
   api:
     build:
