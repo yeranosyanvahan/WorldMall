@@ -48,6 +48,9 @@ app.post("/signup", (req, res) => {
 	content += '</div>';
 	res.end(content);
 });
+app.post('/query/:id', function(req , res){
+  console.log({body:req.body, id:req.params.id})
+});
 
 // Start the server
 app.listen(config.Server.Port,()=>{console.log("server has started on port: "+config.Server.Port)})
