@@ -12,7 +12,7 @@ services:
     volumes:
       - ./Certificates/server.key:/usr/local/apache2/conf/server.key
       - ./Certificates/server.crt:/usr/local/apache2/conf/server.crt
-
+      - ./Config/config.json:/app/src/config.json
 
   api:
     build:
@@ -20,29 +20,15 @@ services:
     ports:
       - 4000:4000
     restart: on-failure
-    depends_on:
-     - zero
-     - alpha
+    volumes:
+     - ./Config/server.yaml:/app/server.yaml
 
-  zero:
-    image: dgraph/dgraph:latest
+  dgraph:
+    build:
+      context: './Server/Database'  
     volumes:
       - dgraph:/dgraph
-    ports:
-      - 5080:5080
-      - 6080:6080
     restart: on-failure
-    command: dgraph zero --my=zero:5080
-
-  alpha:
-    image: dgraph/dgraph:latest
-    volumes:
-      - dgraph:/dgraph
-    ports:
-      - 8080:8080
-      - 9080:9080
-    restart: on-failure
-    command: dgraph alpha --my=alpha:7080 --zero=zero:5080
 
 volumes:
  dgraph:
