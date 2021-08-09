@@ -1,15 +1,13 @@
-import React, {lazy, Suspense } from 'react';
+import React, { Suspense } from 'react';
 import {Nav, Footer} from './lib/index.js'
-import {Page, Main, Aboutus, Signup, Signin, Contactus, Feedback, Policy, Cart} from './Pages/index.js';
+import {Page, Main, Aboutus, Signup, Signin, Contactus, Feedback, Policy, Cart, Sorry, Thanks, Checkout} from './Pages/index.js';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import './Pages/page.css'
-
 
 function App() {
   return (
     <Router>
       <Nav />
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<div className="text_only"><h1>Loading ...</h1></div>}>
         <Switch>
           <Route path="/" exact component={Main} />
           <Route path="/signin" component={Signin} />
@@ -20,11 +18,13 @@ function App() {
           <Route path="/policy" component={Policy} />
           <Route path="/cart"component={Cart}/>
           <Route path="/search/:search" component={Page} />
+          <Route path="/thanks/:reason" component={Thanks} />
+          <Route path="/Checkout" component={Checkout} />
+          <Route path="/" component={Sorry} />
         </Switch>
       </Suspense>
       <Footer />
     </Router>
   );
 }
-
 export default App;

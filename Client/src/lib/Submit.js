@@ -1,8 +1,11 @@
-export default {'signin':(e)=>{
+const Submit =  {'signin':(e)=>{
 console.log(e)
-return false
 },'signup':(e)=>{
 console.log(e)
-return false
+},
+'feedback':(e)=>{
+console.log(e)
 }
 }
+
+export default Submit

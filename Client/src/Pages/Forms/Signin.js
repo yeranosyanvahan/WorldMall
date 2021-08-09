@@ -1,7 +1,7 @@
 import {Link} from 'react-router-dom';
 import React from "react";
-import config from "../config.json"
-import {Submit} from "../lib/index.js"
+import config from '../../config.json'
+import {Submit} from "../../lib/index.js"
 function Signin (){
 return (
 <div className="preforum">

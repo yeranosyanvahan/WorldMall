@@ -1,7 +1,9 @@
 import React from 'react';
 function Aboutus() {
 return (
- <h1>About Us</h1>
+ <div className="text_only">
+   <h1>About Us</h1>
+ </div>
 );
 }
 

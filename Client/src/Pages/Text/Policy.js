@@ -1,7 +1,9 @@
 import React from 'react';
 function Policy() {
 return (
- <h1>Policy</h1>
+ <div className="text_only">
+   <h1>Policy</h1>
+ </div>
 );
 }
 

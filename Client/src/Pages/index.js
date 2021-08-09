@@ -1,13 +1,19 @@
-import React from 'react';
+import {lazy} from 'react';
+import './page.css'
 
-const Main = React.lazy(()=> import('./Main.js'))
-const Page = React.lazy(()=> import('./Page.js'))
-const Signup = React.lazy(()=> import('./Signup.js'))
-const Feedback = React.lazy(()=> import('./Feedback.js'))
-const Contactus = React.lazy(()=> import('./Contactus.js'))
-const Policy = React.lazy(()=> import('./Policy.js'))
-const Aboutus = React.lazy(()=>import('./Aboutus.js'))
-const Signin = React.lazy(()=>import('./Signin.js'))
-const Cart = React.lazy(() => import('./Cart.js'))
+const Signup    = lazy(() => import('./Forms/Signup.js'))
+const Signin    = lazy(() => import('./Forms/Signin.js'))
+const Feedback  = lazy(() => import('./Forms/Feedback.js'))
 
-export {Main, Aboutus, Page, Signin, Signup, Feedback, Contactus, Policy, Cart};
+const Contactus = lazy(() => import('./Text/Contactus.js'))
+const Policy    = lazy(() => import('./Text/Policy.js'))
+const Aboutus   = lazy(() => import('./Text/Aboutus.js'))
+const Thanks    = lazy(() => import('./Text/Thanks.js'))
+const Sorry     = lazy(() => import('./Text/Sorry.js'))
+
+const Main      = lazy(() => import('./Main.js'))
+const Page      = lazy(() => import('./Page.js'))
+const Cart      = lazy(() => import('./Cart.js'))
+const Checkout  = lazy(() => import('./Checkout.js'))
+
+export {Main, Aboutus, Page, Signin, Signup, Feedback, Contactus, Policy, Cart, Sorry, Thanks, Checkout};

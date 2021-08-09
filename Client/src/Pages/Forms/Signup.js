@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from 'react-router-dom';
-import config from '../config.json'
-import {Submit} from "../lib/index.js"
+import config from '../../config.json'
+import {Submit} from "../../lib/index.js"
 function Signup (){
 return (
   <div className="preforum">
@@ -10,19 +10,19 @@ return (
         <legend>Create Account</legend>
 
         <label htmlFor="fname" className="required">Your name</label>
-        <input type="text" id="fname" name="fname" required/>
+        <input type="text" id="fname" name="fname" autoComplete='given-name' required/>
 
-        <label htmlFor="username" className="required">Username</label>
-        <input type="text" id="username" name="username" required/>
+        <label htmlFor="username" className="required" >Username</label>
+        <input type="text" id="username" name="username" autoComplete='username' required/>
 
         <label htmlFor="email" className="required">Email</label>
-        <input type="email" id="email" name="email" required/>
+        <input type="email" id="email" name="email" autoComplete='email'  required/>
 
         <label htmlFor="password" className="required">Password</label>
-        <input type="password" id="password" name="password" required/>
+        <input type="password" id="password" name="password" autoComplete='new-password' required/>
 
         <label htmlFor="confirmpassword" className="required">Re-enter password</label>
-        <input type="password" id="confirmpassword" name="confirmpassword" required/>
+        <input type="password" id="confirmpassword" name="confirmpassword"  required/>
 
         <div>
           <input type="radio" id="customer" name="position" value="customer" checked readOnly />

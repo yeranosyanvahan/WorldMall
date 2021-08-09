@@ -18,6 +18,8 @@ code {
   --clamp:  2;
   --product-color: #f7f7f7;
   --product-opacity: 0.97;
+  --cartdisplayed: block;
+  --signindisplayed: none;  
 }
 
 /* changing font size dynamically and setting minsize */
@@ -25,9 +27,6 @@ code {
 @media only screen and (max-width: 1080px) {
   :root {
     --minsize:  150px;
-  }
-  html {
-    font-size: 12px;
   }
 }
 /* For Footer and the bottom in general */
@@ -85,45 +84,4 @@ nav{
   list-style-type: none;
   grid-column-start: 1;
   grid-column-end: 3;
-}
-
-
-/* For displaying products */
-main {
-  display: grid;
-  grid-template-columns: repeat(auto-fill,minmax(var(--minsize),1fr));
-  padding: 1rem;
-  grid-gap: 1rem;
-  background-color: #f0cfc3;
-  grid-template-rows: max-content;
-  padding-bottom: 2rem;
-}
-
-
-.product {
-    display: grid;
-    grid-template-rows: 2.4em auto 1.2em;
-    align-content: space-between;
-    background-color: var(--product-color);
-    padding-left: .75rem;
-    padding-right: .75rem;
-    max-width: 100%;
-    height: 100%;
-}
-.price {padding-left: 2vw;}
-
-.description {
-  overflow:hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: var(--clamp);
-  height: calc(1.2em * var(--clamp));
-  text-align: center;
-}
-
-.centeredflex {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: black;
 }

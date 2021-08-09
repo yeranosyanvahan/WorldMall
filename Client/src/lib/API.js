@@ -1,4 +1,4 @@
-import * as dgraph from 'dgraph-js-http'
+//import * as dgraph from 'dgraph-js-http'
 
 let Calls={Autocomplete:call=>`{Autocomplete(func:match(category,"${call}",4)){expand(Category)}}`,Search:call=>`{Search(func: alloftext(product,"${call}")){product stores {store}@facets ~products {property}@facets}}`}
 const Dgraph = require("dgraph-js-http");

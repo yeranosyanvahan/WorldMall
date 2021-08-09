@@ -1,5 +1,4 @@
 import React from 'react';
-import {SearchBar} from './index.js';
 import {Link} from 'react-router-dom';
 function Footer() {
 return (

@@ -1,7 +1,9 @@
 import React from 'react';
 function Contactus() {
 return (
- <h1>Contact Us</h1>
+ <div className="text_only">
+   <h1>Contact Us</h1>
+ </div>
 );
 }
 

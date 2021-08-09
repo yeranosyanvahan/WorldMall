@@ -27,3 +27,79 @@ margin-top: 1em;
   color: red;
   font-size: 0.5rem
 }
+/* For text only places */
+.text_only {
+  display: grid;
+  grid-template-columns: auto;
+  justify-content: center;
+  text-align: center;
+  padding:3rem;
+  font-size: 2em;
+}
+
+
+/* For displaying products */
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(var(--minsize),1fr));
+  grid-template-rows: max-content;
+  grid-gap: 1rem;
+}
+.counter, .cart {
+  padding-bottom: 2rem;
+  padding: 1rem;
+}
+.cart {
+  margin: 1rem;
+  margin-bottom:2.5em;
+}
+.checkout {
+  grid-column: -2;
+  grid-row: 1;
+  display: grid;
+ grid-template-columns: auto;
+ align-content: center;
+ text-align: center;
+ grid-gap: .3em;
+}
+
+.product {
+    display: grid;
+    grid-template-rows: 2.4em auto 1.2em;
+    align-content: space-between;
+    background-color: var(--product-color);
+    padding-left: .75rem;
+    padding-right: .75rem;
+    max-width: 100%;
+    height: 100%;
+    grid-gap: .3em;
+}
+.postproduct {
+  display: flex;
+  gap:.5rem;
+  max-width: 100%;
+
+}
+.postproduct > input {
+ width: 100%;
+ max-width: 2em;
+ margin-top:.2em;
+ height: 1em;
+}
+.price {padding-left: 2vw;}
+
+.description {
+  overflow:hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--clamp);
+  height: calc(1.2em * var(--clamp));
+  text-align: center;
+}
+
+.centeredflex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+}

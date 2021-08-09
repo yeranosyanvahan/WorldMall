@@ -1,15 +1,17 @@
 import React from 'react';
+import config from '../../config.json'
+import {Submit} from "../../lib/index.js"
 function Feedback() {
   return (
   <div className="preforum">
-    <form action="https://example.local/signup" target="_blank" method="post" autocomplete="on">
+    <form action={config.API.hostname+"/signup"}  onSubmit={Submit.feedback} target="_blank" method="post" autoComplete="on">
       <fieldset>
         <legend>Leave Feedback</legend>
 
-        <label for="username">Email or Username</label>
+        <label htmlFor="username">Email or Username</label>
         <input type="text" id="username" name="username" required/>
 
-        <label for="message">Message</label>
+        <label htmlFor="message">Message</label>
         <textarea id="message" name="message" rows="10"></textarea>
 
         <input type="submit" value="Send the Feedback" />
