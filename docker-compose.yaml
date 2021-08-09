@@ -16,7 +16,7 @@ services:
 
   api:
     build:
-      context: './Server/API'    
+      context: './Server/API'
     ports:
       - 4000:4000
     restart: on-failure
@@ -24,11 +24,13 @@ services:
      - ./Config/server.yaml:/app/server.yaml
 
   dgraph:
+    volumes:
+     - dgraph:/dgraph
+    ports:
+      - 8080:8080
     build:
       context: './Server/Database'  
-    volumes:
-      - dgraph:/dgraph
     restart: on-failure
-
+    
 volumes:
- dgraph:
+  dgraph:

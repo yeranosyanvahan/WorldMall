@@ -11,7 +11,7 @@ useEffect(()=>{ API("Search",search).then(({Search})=>{Setproducts(Search.map(pr
 
 return (
   <main className='counter'>
-        {products.map((sample)=>{return <Product params={sample} ><div>+</div></Product>})}
+        {products.map((sample)=>{return <Product params={sample} >})}
   </main>
 );
 }

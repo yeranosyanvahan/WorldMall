@@ -1,4 +1,5 @@
-{Categories{
+# *** Categories File ***
+{set{
 _:category <category> "category" . 
 _:category <dgraph.type> "category" .
 _:category <subcategory> _:restaurant_and_market .

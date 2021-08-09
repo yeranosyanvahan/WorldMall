@@ -1,5 +1,5 @@
-# *** Properties Files ***
-{Properties{
+# *** Properties File ***
+{set{
 _:img <dgraph.type> "property" .
 _:img <property> "Image" .
 _:img <info> "Contains source for the image of a product" .

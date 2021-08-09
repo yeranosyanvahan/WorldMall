@@ -1,5 +1,5 @@
 # **** Product File ****
-{Product{
+{set{
 
 _:hqba50krpoeqy6v75xwu5g5jpko4v2i1c <dgraph.type> "product" .
 _:hqba50krpoeqy6v75xwu5g5jpko4v2i1c <product> "adidas Men's Low-Top Gymnastics Shoes" .
