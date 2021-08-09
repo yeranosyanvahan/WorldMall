@@ -1,4 +1,5 @@
 # **** Product File ****
+{Product{
 
 _:hqba50krpoeqy6v75xwu5g5jpko4v2i1c <dgraph.type> "product" .
 _:hqba50krpoeqy6v75xwu5g5jpko4v2i1c <product> "adidas Men's Low-Top Gymnastics Shoes" .
@@ -1077,3 +1078,4 @@ _:hhuxgk15a517i3dyxslithqwcqc658pbi <product> "" .
 _:hhuxgk15a517i3dyxslithqwcqc658pbi <stores> _:amazon (price=-999) .
 _:toys_books_tools <products> _:hhuxgk15a517i3dyxslithqwcqc658pbi .
 _:img <products> _:hhuxgk15a517i3dyxslithqwcqc658pbi (src="https://m.media-amazon.com/images/I/710q9Kr-mzS._AC_SL139_QL70_.jpg") .
+}}

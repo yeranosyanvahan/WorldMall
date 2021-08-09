@@ -1,3 +1,4 @@
+{Categories{
 _:category <category> "category" . 
 _:category <dgraph.type> "category" .
 _:category <subcategory> _:restaurant_and_market .
@@ -104,3 +105,4 @@ _:pet_shop <dgraph.type> "category" .
 
 _:children_food <category> "children_food" . 
 _:children_food <dgraph.type> "category" .
+}}

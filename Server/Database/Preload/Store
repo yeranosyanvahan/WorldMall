@@ -1,9 +1,8 @@
 # *** Store File ***
-
+{Store{
 _:amazon <dgraph.type> "store" .
 _:amazon <geolocation>  "{'type':'Point','coordinates':[45.298571,40.144852]}"^^<geo:geojson> .
 _:amazon <store> "Amazon" .
 _:amazon <class> _:category .
 _:amazon <info> "Retail Ecommerce" .
-
-
+}}
