@@ -8,6 +8,9 @@ const session = require("express-session");
 const bodyParser = require("body-parser");
 const yaml = require('js-yaml');
 const fs = require('fs');
+const dgraph = require("dgraph-js-http");
+const clientStub = new dgraph.DgraphClientStub("http://dgraph:8080", false);
+const dgraphClient = new dgraph.DgraphClient(clientStub);
 const app = express();
 
 // Reading Config Files
@@ -48,8 +51,15 @@ app.post("/signup", (req, res) => {
 	content += '</div>';
 	res.end(content);
 });
-app.post('/query/:id', function(req , res){
-  console.log({body:req.body, id:req.params.id})
+
+let Calls={
+  Autocomplete:({call})=>`{Autocomplete(func:match(category,"${call}",4)){expand(Category)}}`,
+  Search:({call})=>`{Search(func: alloftext(product,"${call}")){product stores {store}@facets ~products {property}@facets}}`
+}
+app.post('/query/:type', async function({params:{type}, body} , res){
+  console.log(body)
+  let {data} = await dgraphClient.newTxn().query(Calls[type](body));
+  res.json(data)
 });
 
 // Start the server

@@ -19,7 +19,8 @@ code {
   --product-color: #f7f7f7;
   --product-opacity: 0.97;
   --cartdisplayed: block;
-  --signindisplayed: none;  
+  --signindisplayed: none;
+  --searchdisplay: none;
 }
 
 /* changing font size dynamically and setting minsize */
@@ -61,12 +62,17 @@ nav{
 }
 .search {
   width:60%;
+  height:1.2em;
   display: grid;
   grid-template-columns: 100fr 1fr;
   align-content: baseline;
   background-color: grey;
   padding-left: 2px;
   padding-right: 4px;
+}
+.search:focus-within{
+    outline: none;
+    --searchdisplay: block;
 }
 .search input, ul, button {
   font-size: 1rem;
@@ -80,6 +86,7 @@ nav{
   background: transparent;
 }
 .search ul {
+  display: var(--searchdisplay);
   background-color: grey;
   list-style-type: none;
   grid-column-start: 1;

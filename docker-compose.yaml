@@ -20,17 +20,12 @@ services:
     ports:
       - 4000:4000
     restart: on-failure
-    volumes:
-     - ./Config/server.yaml:/app/server.yaml
+    links:
+     - dgraph
 
   dgraph:
-    volumes:
-     - dgraph:/dgraph
     ports:
       - 8080:8080
     build:
-      context: './Server/Database'  
+      context: './Server/Database'
     restart: on-failure
-    
-volumes:
-  dgraph:

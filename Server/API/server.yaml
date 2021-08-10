@@ -13,4 +13,4 @@ Client:
 #Database
 Dgraph:
   hostname:
-    'localhost:8000'
+    'dgraph:8080'

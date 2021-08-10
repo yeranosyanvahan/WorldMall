@@ -10,7 +10,7 @@ return (
   <>
     <div className='search'>
       <input ref={inputref} type="text" placeholder="Search..." name="search" id="search"
-        onChange={({target:{value:search}})=>{API("Autocomplete",search).then(Result=>Setsearchresult(Result["Autocomplete"]))}}
+        onChange={({target:{value:search}})=>{API("Autocomplete",{'call':search}).then(Result=>Setsearchresult(Result["Autocomplete"]))}}
         onKeyDown={(event) => { if (event.key === 'Enter') {history.push(`/search/${event.target.value}`);}}}
         />
       <button onClick={()=>{history.push(`/search/${inputref.current.value}`)}}><i className="fa fa-search"></i></button>

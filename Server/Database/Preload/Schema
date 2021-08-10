@@ -2,20 +2,20 @@
 # Define Types
 
 type Category {
-    category !   # search by laveshtain distance
+    category #!   # search by laveshtain distance
     subcategory
     products
 }
 
 
 type City {
-    city !      # search this too
-    geolocation !
+    city #!      # search this too
+    geolocation #!
     stores
 }
 
 type Store {
-    store !     # and this
+    store #!     # and this
     class
     geolocation
     info
@@ -23,12 +23,12 @@ type Store {
 }
 
 type Product {
-    product !
+    product #!
     stores
 }
 
 type Property {
-    property !  # and this
+    property #!  # and this
     products
     info
     details
@@ -36,12 +36,12 @@ type Property {
 
 # Define Directives and index
 
-category: String @index(trigram) .
-city: String @index(trigram) .
-store: String @index(trigram) .
-property: String @index(trigram) .
+category: string @index(trigram) .
+city: string @index(trigram) .
+store: string @index(trigram) .
+property: string @index(trigram) .
 
-product: String @index(term,fulltext) .
+product: string @index(term,fulltext) .
 class: uid .
 
 stores: [uid] @reverse .
@@ -50,4 +50,3 @@ geolocation: geo .
 info: string .
 details: [default] .
 products: [uid] @reverse .
-
