@@ -21,6 +21,7 @@ code {
   --cartdisplayed: block;
   --signindisplayed: none;
   --searchdisplay: none;
+  --color: coral;
 }
 
 /* changing font size dynamically and setting minsize */
@@ -34,7 +35,7 @@ code {
 footer {
    display: grid;
    width: 100%;
-   background-color: coral;
+   background-color: var(--color);
    grid-template-columns: auto auto auto;
    justify-content: center;
    text-align: center;
@@ -58,7 +59,7 @@ nav{
  width: 100%;
  z-index:1;
  justify-content: space-around;
- background-color: coral;
+ background-color: var(--color);
 }
 .search {
   width:60%;
@@ -70,11 +71,9 @@ nav{
   padding-left: 2px;
   padding-right: 4px;
 }
-.search:focus-within{
-    outline: none;
-    --searchdisplay: block;
-}
-.search input, ul, button {
+.search:focus-within{--searchdisplay: block;}
+.search input { outline: none;}
+.search input, .search ul, .search button {
   font-size: 1rem;
   position:relative;
   width: 100%;

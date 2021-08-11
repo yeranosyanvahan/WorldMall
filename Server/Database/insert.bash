@@ -7,4 +7,4 @@ cat Preload/Properties >>  ./Preload/Mutation
 cat Preload/Product >>  ./Preload/Mutation
 cat Preload/Categories >>  ./Preload/Mutation
 echo "}}" >> ./Preload/Mutation
-curl -H "Content-Type: application/rdf" -X POST localhost:8080/mutate?commitNow=true --data-binary @Preload/Mutations
+curl -H "Content-Type: application/rdf" -X POST localhost:8080/mutate?commitNow=true --data-binary @Preload/Mutation

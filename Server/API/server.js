@@ -57,7 +57,7 @@ let Calls={
   Search:({call})=>`{Search(func: alloftext(product,"${call}")){product stores {store}@facets ~products {property}@facets}}`
 }
 app.post('/query/:type', async function({params:{type}, body} , res){
-  console.log(body)
+  console.log({type,body})
   let {data} = await dgraphClient.newTxn().query(Calls[type](body));
   res.json(data)
 });
