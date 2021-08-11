@@ -1,5 +1,6 @@
 import {lazy} from 'react';
 import './page.css'
+import Meaningless from './Meaningless.js'
 
 const Signup    = lazy(() => import('./Forms/Signup.js'))
 const Signin    = lazy(() => import('./Forms/Signin.js'))
@@ -16,4 +17,5 @@ const Page      = lazy(() => import('./Page.js'))
 const Cart      = lazy(() => import('./Cart.js'))
 const Checkout  = lazy(() => import('./Checkout.js'))
 
-export {Main, Aboutus, Page, Signin, Signup, Feedback, Contactus, Policy, Cart, Sorry, Thanks, Checkout};
+
+export {Main, Aboutus, Page, Signin, Signup, Feedback, Contactus, Policy, Cart, Sorry, Thanks, Checkout, Meaningless};
