@@ -8,6 +8,8 @@ const session = require("express-session");
 const bodyParser = require("body-parser");
 const yaml = require('js-yaml');
 const fs = require('fs');
+var http = require('http');
+var https = require('https');
 const dgraph = require("dgraph-js-http");
 const clientStub = new dgraph.DgraphClientStub("http://dgraph:8080", false);
 const dgraphClient = new dgraph.DgraphClient(clientStub);
@@ -63,4 +65,13 @@ app.post('/query/:type', async function({params:{type}, body} , res){
 });
 
 // Start the server
-app.listen(config.Server.Port,()=>{console.log("server has started on port: "+config.Server.Port)})
+try{
+ console.log("Starting HTTPS server")
+ https.createServer({
+      key: fs.readFileSync( 'server.key' ),
+      cert: fs.readFileSync( 'server.crt' )
+  }, app).listen(config.Server.Port);
+}catch{
+  console.log("Failed to run HTTPS server, Running http server")
+  http.createServer(app).listen(config.Server.Port)
+}
