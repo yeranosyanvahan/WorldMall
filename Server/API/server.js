@@ -68,8 +68,8 @@ app.post('/query/:type', async function({params:{type}, body} , res){
 try{
  console.log("Starting HTTPS server")
  https.createServer({
-      key: fs.readFileSync( 'server.key' ),
-      cert: fs.readFileSync( 'server.crt' )
+      key: fs.readFileSync( './Certificates/server.key' ),
+      cert: fs.readFileSync( './Certificates/server.crt' )
   }, app).listen(config.Server.Port);
 }catch{
   console.log("Failed to run HTTPS server, Running http server")
