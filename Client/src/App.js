@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
 import {Nav, Footer} from './lib/index.js'
-import {Page, Main, Aboutus, Signup, Signin, Contactus, Feedback, Policy, Cart, Sorry, Thanks, Checkout} from './Pages/index.js';
+import {Page, Main, Aboutus, Signup, Signin, Contactus, Feedback, Policy, Cart, Sorry, Thanks, Checkout, Meaningless} from './Pages/index.js';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 function App() {
