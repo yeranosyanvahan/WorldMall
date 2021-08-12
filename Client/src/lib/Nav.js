@@ -1,13 +1,16 @@
 import React from 'react';
-import {SearchBar} from './index.js';
+import {SearchBar, Dispatch} from './index.js';
 import {Link} from 'react-router-dom';
 function Nav() {
+const {login, cart} = Dispatch()
 return (
 <nav >
   <Link to="/">Home</Link>
   <SearchBar />
-  <Link to="/signin" style={{display:'var(--signindisplayed)'}}>Sign In</Link>
-  <Link to="/cart" style={{display:'var(--cartdisplayed)'}}><i className="fa fa-shopping-cart"></i></Link>
+  {Object.values(cart).length | login
+    ? <Link to="/cart"><i className="fa fa-shopping-cart"></i></Link>
+    : <Link to="/signin">Sign In</Link>
+  }
 
 </nav>
 );

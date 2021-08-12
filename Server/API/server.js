@@ -53,10 +53,10 @@ app.post("/signup", (req, res) => {
 	content += '</div>';
 	res.end(content);
 });
-
-let Calls={
+// Database Queries
+const Calls={
   Autocomplete:({call})=>`{Autocomplete(func:match(category,"${call}",4)){expand(Category)}}`,
-  Search:({call})=>`{Search(func: alloftext(product,"${call}")){product stores {store}@facets ~products {property}@facets}}`
+  Search:({call})=> `{Search(func: alloftext(product,"${call}")){id:uid product stores{store}@facets(price:price)properties:~products{property}@facets(src:src)}}`
 }
 app.post('/query/:type', async function({params:{type}, body} , res){
   console.log({type,body})

@@ -1,19 +1,21 @@
 import React, {useState,useEffect} from 'react';
-import {API,Product} from '../lib/index.js'
+import {API,Product, Dispatch} from '../lib/index.js'
+import {Link} from 'react-router-dom'
 
-function process(Search) {
-  return {description:Search['product'],src:Search['~products'][0]['~products|src'],price:Search['stores'][0]['stores|price']}
-}
+
 
 function Page({match:{params:{search}}}) {
-let [products,Setproducts]=useState([{'description':'description','src':'https://m.media-amazon.com/images/I/81WjXgpKX4L._AC_UL320_.jpg','price':'10$'}])
-useEffect(()=>{ API("Search",{'call':search}).then(({Search})=>{Setproducts(Search.map(process))})}, [search])
+let [products,Setproducts]=useState([{}])
+useEffect(()=>{ API("Search",{'call':search}).then((Result)=>{Setproducts(Result)})}, [search])
+const {cart,Action}=Dispatch()
 
 return (
   <main className='counter'>
         {products.map((sample)=>{return (
           <Product params={sample} >
-            <button>Add to Cart</button> 
+            {!cart[sample.id]
+            ? <button onClick={()=>{Action("Add",sample)}}>Add to Cart</button>
+            : <button style={{backgroundColor:'blue'}}><Link to="/cart" style={{color:'black'}}>Visit Cart</Link></button>}
           </Product>)})}
   </main>
 );
