@@ -16,5 +16,4 @@ const Page      = lazy(() => import('./Page.js'))
 const Cart      = lazy(() => import('./Cart.js'))
 const Checkout  = lazy(() => import('./Checkout.js'))
 
-
 export {Main, Aboutus, Page, Signin, Signup, Feedback, Contactus, Policy, Cart, Sorry, Thanks, Checkout};

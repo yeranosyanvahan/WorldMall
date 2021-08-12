@@ -1,4 +1,4 @@
-import React, {useState, useRef} from 'react';
+import React from 'react';
 import {Product, Dispatch} from '../lib/index.js';
 import {Link, useHistory} from 'react-router-dom';
 
@@ -22,9 +22,9 @@ function Cart() {
 
       {cart.map(({price,id,...sample},index)=>{
         return (
-        <Product params={{price:price*quantity[id],...sample}}>
+        <Product params={{price:price*quantity[id],...sample}} key={id}>
           <div className="quantity">Qty:&ensp;
-            <input type="number" min="0" step="1" defaultValue={quantity[id]} onChange={({target:{value:number}})=>{Action('Set',{id,number: parseInt(number)})}}/>
+            <input type="number" min="0" step="1" placeholder="1" defaultValue={quantity[id]} onChange={({target:{value:number}})=>{Action('Set',{id,number: number ? parseInt(number) : 1 })}}/>
           </div>
           <Link to={`/Search/id/${index}`}> Search for Similar Items</Link>
         </Product>
@@ -37,7 +37,8 @@ function Cart() {
            <div>Total: {cart.map(({price,id})=>{return price * quantity[id]}).reduce((a, b) => a + b)}$</div>
            <button onClick={() => {history.push('/checkout')}} className="colorbutton" style={{'padding':'.5rem'}}> Proceed to Checkout</button>
         </div>
-      </main>}
+      </main>
+}
     </fieldset>
   )}
 

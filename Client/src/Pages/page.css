@@ -45,14 +45,12 @@ main {
   grid-template-rows: max-content;
   grid-gap: 1rem;
 }
-.counter, .cart {
-  padding-bottom: 2rem;
-  padding: 1rem;
-}
+/* Cart */
 .cart {
   margin: 1rem;
   margin-bottom:2.5em;
 }
+
 .checkout {
   grid-column: -2;
   grid-row: 1;
@@ -62,7 +60,18 @@ main {
  text-align: center;
  grid-gap: .3em;
 }
+.quantity > input {
+ width: 100%;
+ max-width: 2em;
+ margin-top:.2em;
+ height: 1em;
+}
 
+.counter, .cart {
+  padding-bottom: 2rem;
+  padding: 1rem;
+}
+/* Product component */
 .product {
   display: flex;
   flex-direction: column;
@@ -78,18 +87,15 @@ main {
   column-gap:.3rem;
   margin-bottom: .3rem;
 }
+.price {user-select:none}
 .bottom button, .colorbutton {
 background-color: var(--color);
 border-radius: 0.5rem;
 border: none;
-padding: 0 2rem;
+min-width: 9rem;
+user-select:none;
 }
-.quantity > input {
- width: 100%;
- max-width: 2em;
- margin-top:.2em;
- height: 1em;
-}
+
 
 .description {
   overflow:hidden;
