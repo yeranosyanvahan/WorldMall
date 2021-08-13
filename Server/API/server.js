@@ -39,6 +39,13 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Routes
+app.get("/", (req, res) => {
+  console.log("Testing API");
+  var content = '<div id="result1">';
+	content += "It must be working"
+	content += '</div>';
+	res.end(content);
+});
 app.post("/signin", (req, res) => {
   console.log(req.body);
   var content = '<div id="result1">';

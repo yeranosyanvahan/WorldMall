@@ -1,7 +1,7 @@
 FROM node:16.4 as build
 WORKDIR /app
 COPY . ./
-RUN npm install 
+RUN npm install
 RUN npm run build
 
 FROM httpd:2.4
@@ -13,11 +13,14 @@ RUN sed -i \
         -e 's/^#\(LoadModule .*mod_ssl.so\)/\1/' \
         -e 's/^#\(LoadModule .*mod_socache_shmcb.so\)/\1/' \
         -e 's/^#\(LoadModule .*mod_rewrite.so\)/\1/' \
+        -e 's/^#\(LoadModule .*mod_proxy.so\)/\1/' \
+        -e 's/^#\(LoadModule .*mod_proxy_http.so\)/\1/' \
         conf/httpd.conf
 
 RUN sed -e "s/<\/VirtualHost>//g" -i conf/extra/httpd-ssl.conf
 
 RUN echo " \n\
+ProxyPass /api http://localhost:8000 \n\
 <IfModule rewrite_module> \n\
     RewriteEngine On \n\
         RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR] \n\
