@@ -20,7 +20,9 @@ RUN sed -i \
 RUN sed -e "s/<\/VirtualHost>//g" -i conf/extra/httpd-ssl.conf
 
 RUN echo " \n\
-ProxyPass /api http://localhost:8000 \n\
+ProxyPass /api http://api:8000 \n\
+ProxyPass /apis https://api:8000 \n\
+
 <IfModule rewrite_module> \n\
     RewriteEngine On \n\
         RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR] \n\

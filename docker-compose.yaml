@@ -9,6 +9,8 @@ services:
       - 80:80
       - 443:443
     restart: on-failure
+    links:
+     - api
     volumes:
       - ./Certificates/server.key:/usr/local/apache2/conf/server.key
       - ./Certificates/server.crt:/usr/local/apache2/conf/server.crt
