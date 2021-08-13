@@ -20,6 +20,8 @@ RUN sed -i \
 RUN sed -e "s/<\/VirtualHost>//g" -i conf/extra/httpd-ssl.conf
 
 RUN echo " \n\
+
+ErrorDocument 404 /index.html \n\
 ProxyPassReverse	/api http://api:4000 \n\
 ProxyPassReverse	/apis https://api:4000 \n\
 

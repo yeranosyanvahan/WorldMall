@@ -78,7 +78,10 @@ try{
       key: fs.readFileSync( './Certificates/server.key' ),
       cert: fs.readFileSync( './Certificates/server.crt' )
   }, app).listen(config.Server.Port);
+ console.log("Starting HTTP server")
+ http.createServer(app).listen(config.Server.Port+1)
 }catch{
-  console.log("Failed to run HTTPS server, Running HTTP server")
+  console.log("Failed to run HTTPS server")
+  console.log("Starting HTTP server")
   http.createServer(app).listen(config.Server.Port)
 }
