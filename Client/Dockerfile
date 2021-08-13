@@ -21,9 +21,18 @@ RUN sed -e "s/<\/VirtualHost>//g" -i conf/extra/httpd-ssl.conf
 
 RUN echo " \n\
 
-ErrorDocument 404 /index.html \n\
-ProxyPassReverse	/api http://api:4000 \n\
-ProxyPassReverse	/apis https://api:4000 \n\
+#ErrorDocument 404 /index.html \n\
+ProxyPass /api http://api:4001/ \n\
+ProxyPassReverse /api http://api:4001 / \n\
+
+ProxyPass /apis https://api:4000/ \n\
+ProxyPassReverse /apis https://api:4000 / \n\
+ProxyRequests Off \n\
+ProxyPreserveHost On \n\
+ProxyVia Full \n\
+<Proxy *> \n\
+  Require all granted \n\
+</Proxy> \n\
 
 #<IfModule rewrite_module> \n\
 #    RewriteEngine On \n\
