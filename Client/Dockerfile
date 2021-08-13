@@ -23,13 +23,13 @@ RUN echo " \n\
 ProxyPass /api http://api:8000 \n\
 ProxyPass /apis https://api:8000 \n\
 
-<IfModule rewrite_module> \n\
-    RewriteEngine On \n\
-        RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR] \n\
-        RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d \n\
-        RewriteRule ^ - [L] \n\
-    RewriteRule ^ /index.html \n\
-</IfModule> \n\
+#<IfModule rewrite_module> \n\
+#    RewriteEngine On \n\
+#        RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR] \n\
+#        RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d \n\
+#        RewriteRule ^ - [L] \n\
+#    RewriteRule ^ /index.html \n\
+#</IfModule> \n\
 </VirtualHost> \n\
 <VirtualHost *:80>  \n\
   ServerName sell.miom.am \n\

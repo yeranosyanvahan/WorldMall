@@ -13,7 +13,6 @@ useEffect(()=>{
       Setnothingfound(false)
       Setproducts(products)
     }
-
  API("Search",{'call':search}).then(pseudoSetproducts
 )}, [search])
 const {cart,Action}=Dispatch()
