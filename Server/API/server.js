@@ -42,7 +42,7 @@ app.use(passport.session());
 app.get("/", (req, res) => {
   console.log("Testing API");
   var content = '<div id="result1">';
-	content += "It must be working"
+	content += "API"
 	content += '</div>';
 	res.end(content);
 });
@@ -73,15 +73,15 @@ app.post('/query/:type', async function({params:{type}, body} , res){
 
 // Start the server
 try{
- console.log("Starting HTTPS server")
+ console.log("Starting HTTPS server on port: ", config.Server.Port)
  https.createServer({
       key: fs.readFileSync( './Certificates/server.key' ),
       cert: fs.readFileSync( './Certificates/server.crt' )
   }, app).listen(config.Server.Port);
- console.log("Starting HTTP server")
+  console.log("Starting HTTP server on port: ", config.Server.Port+1)
  http.createServer(app).listen(config.Server.Port+1)
 }catch{
   console.log("Failed to run HTTPS server")
-  console.log("Starting HTTP server")
+  console.log("Starting HTTP server on port: ", config.Server.Port)
   http.createServer(app).listen(config.Server.Port)
 }

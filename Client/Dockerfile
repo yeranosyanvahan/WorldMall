@@ -23,11 +23,11 @@ RUN echo " \n\
 
 SSLProxyEngine on \n\
 ErrorDocument 404 /index.html \n\
-ProxyPass /api http://api:4001/ \n\
-ProxyPassReverse /api http://api:4001 / \n\
+ProxyPass /api http://api:4001 \n\
+ProxyPassReverse /api http://api:4001  \n\
 
-ProxyPass /apis https://api:4000/ \n\
-ProxyPassReverse /apis https://api:4000/ \n\
+ProxyPass /apis https://api:4000 \n\
+ProxyPassReverse /apis https://api:4000 \n\
 ProxyRequests Off \n\
 ProxyPreserveHost On \n\
 ProxyVia Full \n\
