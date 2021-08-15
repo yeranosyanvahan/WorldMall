@@ -37,7 +37,7 @@ app.get("/", (req, res) => {
 });
 app.post("/signin", (req, res) => {
   try {
-    res.cookie(req.body.username,req.body.password, {signed: true,  maxAge:3600000})
+    res.cookie('token',req.body, {signed: false,  maxAge:10000})
     res.redirect(config.Client.redirect+'/thanks/singing in');
   }
   catch (e) {
