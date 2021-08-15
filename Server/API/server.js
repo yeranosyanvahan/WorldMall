@@ -1,12 +1,9 @@
 const express = require("express");
 const cors = require("cors");
 const passport = require("passport");
-const passportLocal = require("passport-local").Strategy;
-const cookieParser = require("cookie-parser");
 const bcrypt = require("bcryptjs");
-const session = require("express-session");
-const bodyParser = require("body-parser");
 const yaml = require('js-yaml');
+const cookieParser = require("cookie-parser");
 const fs = require('fs');
 var http = require('http');
 var https = require('https');
@@ -20,23 +17,15 @@ let fileContents = fs.readFileSync('server.yaml');
 let config = yaml.load(fileContents);
 
 // Middleware
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser(config['secret']));
 
 app.use(cors({
     origin: config['Client']['hostname'],
     credentials: true,
 }));
 
-app.use(session({
-    secret: config.Secret,
-    resave: true,
-    saveUninitialized: true,
-}));
-
-app.use(cookieParser(config.Secret));
-app.use(passport.initialize());
-app.use(passport.session());
 
 // Routes
 app.get("/", (req, res) => {
@@ -48,9 +37,15 @@ app.get("/", (req, res) => {
 });
 app.post("/signin", (req, res) => {
   console.log(req.body);
-  var content = '<div id="result1">';
-	content += JSON.stringify(req.body, 5);
-	content += '</div>';
+  try {
+    res.cookie(req.body.username,req.body.password, {signed: true})
+    res.redirect(config.Client.rcedirect+'/thanks/singing in');
+  }
+  catch (e) {
+    console.log(e)
+    res.redirect(config.Client.rcedirect+'/sorry');
+
+  }
 	res.end(content);
 });
 app.post("/signup", (req, res) => {
@@ -60,6 +55,7 @@ app.post("/signup", (req, res) => {
 	content += '</div>';
 	res.end(content);
 });
+
 // Database Queries
 const Calls={
   Autocomplete:({call})=>`{Autocomplete(func:match(category,"${call}",4)){expand(Category)}}`,

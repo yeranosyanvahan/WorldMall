@@ -48,9 +48,31 @@ function login (state=false, {type:action, input}) {
   }
 }
 
+const Load = () => {
+  try {
+    const serializedState = localStorage.getItem('state');
+    if (serializedState === null) {
+      return undefined;
+    }
+    return JSON.parse(serializedState);
+  } catch (err) {
+    return undefined;
+  }
+};
+
+const Save = (state) => {
+  try {
+    const serializedState = JSON.stringify(state);
+    localStorage.setItem('state', serializedState);
+  } catch {
+    // ignore write errors
+  }
+};
 
 const Reducers=combineReducers(stores)
-const Store = createStore(Reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+const Store = createStore(Reducers, Load())
+Store.subscribe(() => Save(Store.getState()));
+
 function Dispatch() {
   const dispatch = useDispatch()
 
