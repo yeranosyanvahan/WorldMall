@@ -36,7 +36,6 @@ app.get("/", (req, res) => {
 	res.end(content);
 });
 app.post("/signin", (req, res) => {
-  console.log(req.body);
   try {
     res.cookie(req.body.username,req.body.password, {signed: true})
     res.redirect(config.Client.redirect+'/thanks/singing in');
@@ -44,16 +43,10 @@ app.post("/signin", (req, res) => {
   catch (e) {
     console.log(e)
     res.redirect(config.Client.redirect+'/sorry');
-
   }
-	res.end(content);
 });
 app.post("/signup", (req, res) => {
-  console.log(req.body);
-  var content = '<div id="result1">';
-	content += JSON.stringify(req.body, 5);
-	content += '</div>';
-	res.end(content);
+    res.redirect(config.Client.redirect+'/signin');
 });
 
 // Database Queries
