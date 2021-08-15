@@ -5,7 +5,7 @@ import {Submit} from "../../lib/index.js"
 function Signin (){
 return (
 <div className="preforum">
-  <form action={config.API.hostname+"/signup"} onSubmit={Submit.signin} target="_blank" method="post" autoComplete="on">
+  <form action={config.API.hostname+"/signin"} onSubmit={Submit.signin} target="_blank" method="post" autoComplete="on">
     <fieldset>
       <legend>Sign in</legend>
 
