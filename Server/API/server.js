@@ -19,7 +19,7 @@ let config = yaml.load(fileContents);
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cookieParser(config['secret']));
+app.use(cookieParser(config['Secret']));
 
 app.use(cors({
     origin: config['Client']['hostname'],
