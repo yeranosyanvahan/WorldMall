@@ -39,11 +39,11 @@ app.post("/signin", (req, res) => {
   console.log(req.body);
   try {
     res.cookie(req.body.username,req.body.password, {signed: true})
-    res.redirect(config.Client.rcedirect+'/thanks/singing in');
+    res.redirect(config.Client.redirect+'/thanks/singing in');
   }
   catch (e) {
     console.log(e)
-    res.redirect(config.Client.rcedirect+'/sorry');
+    res.redirect(config.Client.redirect+'/sorry');
 
   }
 	res.end(content);
