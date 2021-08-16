@@ -28,13 +28,7 @@ app.use(cors({
 
 
 // Routes
-app.get("/", (req, res) => {
-  console.log("Testing API");
-  var content = '<div id="result1">';
-	content += "API"
-	content += '</div>';
-	res.end(content);
-});
+app.get("/", (req, res) =>  res.end('<div>API is up and running</div>'));
 app.post("/signin", (req, res) => {
   try {
     res.cookie('token',req.body, {signed: false,  maxAge:10000})

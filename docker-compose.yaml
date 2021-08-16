@@ -18,7 +18,8 @@ services:
 
   api:
     build:
-      context: './Server/API'
+      context: './Server'
+      dockerfile: API-Dockerfile
     ports:
       - 4000:4000
     restart: on-failure
@@ -29,5 +30,6 @@ services:
     ports:
       - 8080:8080
     build:
-      context: './Server/Database'
+      context: './Server'
+      dockerfile: Database-Dockerfile
     restart: on-failure

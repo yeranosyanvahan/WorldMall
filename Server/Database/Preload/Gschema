@@ -1,0 +1,68 @@
+# QUERY TYPE: ALTER
+# Define interfaces
+interface Info {
+  info: String
+  details: [String]
+}
+# Define Types
+# product price store
+type Item {
+  product: Product!
+  store: Store!
+  price: Int!
+  discount: Int
+}
+
+type Category {
+ category: String! @search(by: [trigram])  @id# search by laveshtain distance
+ subcategory: [Category]
+ products: [Product] @hasInverse(field: category)
+}
+
+type Product {
+ product: String! @search(by: [term, fulltext])
+ created_at: DateTime!
+ category: Category
+ property: [Property]
+}
+
+type Property implements Info {
+ property: String! @search(by: [trigram])   # and this
+ products: [Product]! @hasInverse(field: property)
+}
+
+type Store implements Info {
+    store: String! @search(by: [trigram])      # and this
+    geolocation: Point!
+    address: String
+    city: City
+    owner: User !
+}
+
+type User  @secret(field: "password") {
+  name: String!
+  created_at: DateTime!
+  username: String! @id
+  email: String
+  phone_number: String
+  stores: [Store] @hasInverse(field: owner)
+}
+
+type Order implements Info {
+  created_at: DateTime!
+  delivered_at: DateTime
+  shipping_address: String
+  billing_address: String
+  geolocation: Point!
+  user: User!
+  driver: User!
+  items: [Item]!
+  returned: Boolean
+  delivered: Boolean!
+}
+
+type City {
+    city: String! @search(by: [trigram]) @id     # search this too
+    geolocation:  Polygon!
+    stores: [Store] @hasInverse(field: city)
+}

@@ -1,6 +1,6 @@
 FROM dgraph/dgraph:latest
 WORKDIR /dgraph
-COPY ./ ./
+COPY ./Database ./
 RUN chmod +x insert.bash
 RUN dgraph zero & dgraph alpha & bash insert.bash
 RUN rm -r Preload

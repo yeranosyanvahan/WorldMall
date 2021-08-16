@@ -1,22 +1,13 @@
 # QUERY TYPE: ALTER
 # Define Types
-
 type Category {
     category #!   # search by laveshtain distance
     subcategory
     products
 }
 
-
-type City {
-    city #!      # search this too
-    geolocation #!
-    stores
-}
-
 type Store {
     store #!     # and this
-    class
     geolocation
     info
     details
@@ -34,15 +25,39 @@ type Property {
     details
 }
 
-# Define Directives and index
+type City {
+    city #!      # search this too
+    geolocation #!
+    stores
+}
 
+type Order {
+  created_at
+  delivered_at
+  geolocation
+  user
+  driver.user
+  products  # with stores and prices
+}
+
+type User {
+  created_at
+  username
+  password
+  email
+  phone_number
+  stores
+}
+
+
+
+# Define Directives and index
 category: string @index(trigram) .
 city: string @index(trigram) .
 store: string @index(trigram) .
 property: string @index(trigram) .
 
 product: string @index(term,fulltext) .
-class: uid .
 
 stores: [uid] @reverse .
 subcategory: [uid] .
