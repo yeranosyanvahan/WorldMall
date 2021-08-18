@@ -1,17 +1,31 @@
 const fetch = require("node-fetch")
-let config = require('js-yaml').load(require('fs').readFileSync('server.yaml'));
+const fs = require('fs')
+let config = require('js-yaml').load(fs.readFileSync('server.yaml'));
+async function Schema(){
+  let a =  await fetch(`${config.Dgraph.hostname}/admin/schema`, {
+  method: 'POST',
+  body: fs.readFileSync('Gschema')
+})
+console.log("Schema",a)
+}
 
 async function Fetching(){
   let a =  await fetch(`${config.Dgraph.hostname}/graphql`, {
   method: 'POST',
-  body: `mutation MyMutation {
-  addUser(input: {name: "a", created_at: "2019", username: "b", password: "a55s6559"}) {
+  headers: {'Content-Type': 'application/graphql', 'Content-Encoding': 'no'},
+  body: `mutation {
+  addUser(input: {name: "pp", created_at: "2019", username: "as", password: "afsafasf"}) {
     numUids
   }
 }
 `
-})
-console.log(a)
 }
+)
+console.log("Fething",a.body)
 
-Fetching()
+}
+async function f() {
+//  await Schema()
+  await Fetching()
+}
+f()

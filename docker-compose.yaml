@@ -28,8 +28,10 @@ services:
 
   dgraph:
     ports:
+      - 5080:5080
+      - 9080:9080
       - 8080:8080
-    build:
-      context: './Server'
-      dockerfile: Database-Dockerfile
+      - 6060:6060
+      - 8000:8000
+    image: dgraph/standalone:v21.03.1
     restart: on-failure
