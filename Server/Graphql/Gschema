@@ -11,11 +11,13 @@ type Item {
   store: Store!
   price: Int!
   discount: Int
+
 }
 
 type Category {
  category: String! @search(by: [trigram])  @id# search by laveshtain distance
- subcategory: [Category]
+ subcategory: [Category] @hasInverse(field: topcategory)
+ topcategory: [Category]
  products: [Product] @hasInverse(field: category)
 }
 
@@ -33,17 +35,17 @@ type Property implements Info {
 
 type Store implements Info {
     store: String! @search(by: [trigram])      # and this
+    owner: User !
     geolocation: Point!
     address: String
     city: City
-    owner: User !
 }
 
-type User  @secret(field: "password") {
-  name: String!
-  created_at: DateTime!
+type User  @secret(field: "password", pred: "password") {
+  fname: String!
   username: String! @id
   email: String
+  created_at: DateTime!
   phone_number: String
   stores: [Store] @hasInverse(field: owner)
 }

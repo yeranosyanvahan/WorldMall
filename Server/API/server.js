@@ -1,15 +1,14 @@
 const express = require("express");
 const cors = require("cors");
-const passport = require("passport");
 const bcrypt = require("bcryptjs");
 const yaml = require('js-yaml');
 const cookieParser = require("cookie-parser");
 const fs = require('fs');
 var http = require('http');
 var https = require('https');
-const dgraph = require("dgraph-js-http");
-const clientStub = new dgraph.DgraphClientStub("http://dgraph:8080", false);
-const dgraphClient = new dgraph.DgraphClient(clientStub);
+const {Signin, Signup} = require("./Authentication")
+const Privilege = require("./Authorization")
+const {Query, Mutate}= require('./Database_Calls')
 const app = express();
 
 // Reading Config Files
@@ -30,27 +29,22 @@ app.use(cors({
 // Routes
 app.get("/", (req, res) =>  res.end('<div>API is up and running</div>'));
 app.post("/signin", (req, res) => {
-  try {
-    res.cookie('token',req.body, {signed: false,  maxAge:10000})
-    res.redirect(config.Client.redirect+'/thanks/singing in');
-  }
-  catch (e) {
-    console.log(e)
-    res.redirect(config.Client.redirect+'/sorry');
+  try{
+  const {username,password}= req.body
+  Login(username,password)
+}
+  catch {
+
   }
 });
 app.post("/signup", (req, res) => {
+    const {fname, username, password, email, phone_number=''} = req.body
+    Signup(fname, username, password, email, phone_number)
     res.redirect(config.Client.redirect+'/signin');
 });
 
-// Database Queries
-const Calls={
-  Autocomplete:({call})=>`{Autocomplete(func:match(category,"${call}",4)){expand(Category)}}`,
-  Search:({call})=> `{Search(func: alloftext(product,"${call}")){id:uid product stores{store}@facets(price:price)properties:~products{property}@facets(src:src)}}`
-}
 app.post('/query/:type', async function({params:{type}, body} , res){
-  console.log({type,body})
-  let {data} = await dgraphClient.newTxn().query(Calls[type](body));
+  let data = Query(type,body)
   res.json(data)
 });
 

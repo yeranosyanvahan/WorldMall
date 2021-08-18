@@ -1,6 +1,6 @@
 Secret: "secret"
 Server:
-  Port: 4000
+  Port: 4444
 
 #Frontend React app
 Client:
@@ -13,4 +13,4 @@ Client:
 #Database
 Dgraph:
   hostname:
-    'dgraph:8080'
+    'http://dgraph:8080'
