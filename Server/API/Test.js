@@ -6,11 +6,12 @@ async function Schema(){
   method: 'POST',
   body: fs.readFileSync('Gschema')
 })
+a=await a.json()
 console.log("Schema",a)
 }
 
 async function Fetching(){
-  let a =  await fetch(`${config.Dgraph.hostname}/graphql`, {
+  let a =  await (await fetch(`${config.Dgraph.hostname}/graphql`, {
   method: 'POST',
   headers: {'Content-Type': 'application/graphql', 'Content-Encoding': 'no'},
   body: `mutation {
@@ -18,14 +19,12 @@ async function Fetching(){
     numUids
   }
 }
-`
-}
-)
-console.log("Fething",a.body)
+`})).json()
+console.log("Fething",a)
 
 }
 async function f() {
-//  await Schema()
+  await Schema()
   await Fetching()
 }
 f()
