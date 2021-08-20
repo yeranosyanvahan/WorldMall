@@ -1,12 +1,11 @@
-# QUERY TYPE: ALTER
 # Define interfaces
 interface Info {
   info: String
   details: [String]
 }
 # Define Types
-# product price store
-type Item {
+
+type Item implements Info {
   product: Product!
   store: Store!
   price: Int!
@@ -47,17 +46,24 @@ type User  @secret(field: "password", pred: "password") {
   email: String
   created_at: DateTime!
   phone_number: String
+  cart: [Cart]
   stores: [Store] @hasInverse(field: owner)
+}
+
+type Cart {
+  name: String!
+  owner: User! @hasInverse(field: cart)
+  items: [Item]
+  products: [Product]
 }
 
 type Order implements Info {
   created_at: DateTime!
   delivered_at: DateTime
-  shipping_address: String
-  billing_address: String
-  geolocation: Point!
+  shipping_address: String!
+  geolocation: Point
   user: User!
-  driver: User!
+  driver: User
   items: [Item]!
   returned: Boolean
   delivered: Boolean!

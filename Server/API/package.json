@@ -4,7 +4,7 @@
   "description": "Web Api for the app",
   "main": "index.js",
   "scripts": {
-    "test": "test.js",
+    "test": "node Test.js",
     "start": "node server.js"
   },
   "author": "Vahan Yeranosyan",

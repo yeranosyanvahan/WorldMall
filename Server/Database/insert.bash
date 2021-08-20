@@ -8,5 +8,6 @@ cat DQL/Product >>  ./DQL/Mutation
 cat DQL/Categories >>  ./DQL/Mutation
 echo "}}" >> ./DQL/Mutation
 curl -H "Content-Type: application/rdf" -X POST localhost:8080/mutate?commitNow=true --data-binary @DQL/Mutation
-curl -H "Content-Type: application/graphql" -X POST localhost:8080/mutate?commitNow=true --data-binary @Graphql/Gschema
-curl -H "Content-Type: application/graphql" -X POST localhost:8080/mutate?commitNow=true --data-binary @Graphql/AddCategory
+sleep 2s
+curl -X POST localhost:8080/admin/schema --data-binary @Graphql/Gschema
+curl -H "Content-Type: application/graphql" -X POST localhost:8080/graphql --data-binary @Graphql/AddCategory
