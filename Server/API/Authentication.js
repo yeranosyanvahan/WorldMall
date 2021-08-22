@@ -1,14 +1,19 @@
 const bcrypt = require("bcryptjs");
+const jwt = require('jsonwebtoken')
 const {Query, Mutate}= require('./Database_Calls')
 let config = require('js-yaml').load(require('fs').readFileSync('server.yaml'));
 
 async function Signin(username, password) {
-  result = await Query("CheckUser",{username,password})
-  return {username, access:true}
+  if(!Query("CheckUser",{username,password})) return false
+  const User = Query("GetUser",{username})
+  return jwt.sign(User, config.Secret)
 }
 async function Signup(fname, username, password, email="",phone_number="") {
-  result = await Mutate("AddUser",{name,username,password,email,password})
-
+  try {
+    Mutate("AddUser",{name,username,password,email,password})
+  } catch (e) {
+    return e
+  }
 }
 
 module.exports = {Signin, Signup}

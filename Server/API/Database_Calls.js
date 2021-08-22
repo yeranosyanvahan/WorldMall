@@ -12,8 +12,7 @@ const Queries={
   Search:({call})=> `{Search(func: alloftext(product,"${call}")){id:uid product stores{store}@facets(price:price)properties:~products{property}@facets(src:src)}}`
 }
 async function Query(type, call) {
-  Queries[type] ? return Fetch(Queries[type](call))
-  : throw(`Query ${type} is not specified`)
+  Queries[type] ? Queries[type](call): function(){throw(`Query ${type} is not specified`)}()
 };
 
 
@@ -24,9 +23,7 @@ const Mutations={
 }
 
 async function Mutate(type, call) {
- call[]
- console.log(`Mutation ${type} with params: ${call}`)
- await dgraphClient.newTxn().mutate(Mutations[type](body));
-}
+  Mutations[type] ? Mutations[type](call): function(){throw(`Mutation ${type} is not specified`)}()
+};
 
 module.exports = {Query, Mutate}

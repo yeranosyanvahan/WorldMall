@@ -12,7 +12,7 @@ console.log("Schema",a)
 }
 
 async function Fetching(){
-  let a =  await (await fetch(`${config.Dgraph.hostname}/graphql`, {
+  let a =  await fetch(`${config.Dgraph.hostname}/graphql`, {
   method: 'POST',
   headers: {'Content-Type': 'application/graphql'},
   body: `mutation {
@@ -20,10 +20,11 @@ async function Fetching(){
     numUids
   }
 }
-`})).json()
+`})
 console.log("Fething",a)
-
 }
+Fething()
+
 async function f() {
 //  await Schema()
   await Fetching()
