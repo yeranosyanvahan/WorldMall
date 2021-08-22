@@ -8,7 +8,7 @@ var http = require('http');
 var https = require('https');
 const {Signin, Signup} = require("./Authentication")
 const Authorization = require("./Authorization")
-const {Query, Mutate, Update}= require('./Database_Calls')
+const {Query, Mutate}= require('./Database_Calls')
 const app = express();
 
 // Reading Config Files
@@ -68,7 +68,7 @@ app.post('/mutate/:type', Authorization, async function({params:{type}, body} , 
 app.post('/mutate/:type', Authorization, async function({params:{type}, body} , res){
   let privilege = Privilege(req.cookies, type)
   if(!privilege.access) return res.send("Request forbidden",403)
-  let response = Update(type,{...body, ...privilege})
+  let response = Mutate(type,{...body, ...privilege})
   res.send(response)
 });
 
