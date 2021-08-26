@@ -11,6 +11,7 @@ async function API(type, call={}) {
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify(call)
   });
+  console.log({type,call})
   let {[type]:Content}=await res.json()
   return Content.map((content)=>Process[type](content));
 };

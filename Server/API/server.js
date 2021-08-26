@@ -51,27 +51,17 @@ app.post("/signup", (req, res) => {
      }
     });
 
-app.post('/query/:type', Authorization, async function({params:{type}, body} , res){
-  let privilege = Privilege(req.cookies, type)
-  if(!privilege.access) return res.send("Request forbidden",403)
-  let {data} = Query(type,{...body, ...privilege})
+app.post('/query/:type', Authorization, async function(req, res){
+  const {token, params:{type}, body} = req
+  console.log("path",req.path.split("/").filter((sample)=>sample))
+  let {data} = Query(type,{...body, ...token})
   res.json(data)
 });
 
-app.post('/mutate/:type', Authorization, async function({params:{type}, body} , res){
-  let privilege = Privilege(req.cookies, type)
-  if(!privilege.access) return res.send("Request forbidden",403)
-  let response = Mutate(type,{...body, ...privilege})
-  res.send(response)
+app.post('/mutate/:type', Authorization, async function({token, params:{type}, body}, res){
+  let {data} = Mutate(type,{...body, ...token})
+  res.json(data)
 });
-
-app.post('/mutate/:type', Authorization, async function({params:{type}, body} , res){
-  let privilege = Privilege(req.cookies, type)
-  if(!privilege.access) return res.send("Request forbidden",403)
-  let response = Mutate(type,{...body, ...privilege})
-  res.send(response)
-});
-
 
 // Start the server
 try{
