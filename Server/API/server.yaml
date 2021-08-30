@@ -3,10 +3,10 @@ Server:
   Port: 4000
 Open Url:
   query:
-   - 'Autocomplete'
-   - 'Search'
+   Autocomplete: True
+   Search: True
   mutate:
-   - 'Checkout'
+   Checkout: True
 
 #Frontend React app
 Client:
