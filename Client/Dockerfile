@@ -1,7 +1,7 @@
 FROM node:16.4 as build
 WORKDIR /app
 COPY . ./
-RUN npm install
+RUN npm install -y
 RUN npm run build
 
 FROM httpd:2.4
