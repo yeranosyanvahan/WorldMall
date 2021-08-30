@@ -2,12 +2,12 @@ Secret: "secret"
 Server:
   Port: 4000
 Open Url:
-  Query:
+  query:
    - 'Autocomplete'
    - 'Search'
-  Mutate:
+  mutate:
    - 'Checkout'
-   
+
 #Frontend React app
 Client:
   hostname:

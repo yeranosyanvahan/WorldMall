@@ -3,8 +3,9 @@ const jwt = require('jsonwebtoken');
 let config = yaml.load(require('fs').readFileSync('server.yaml'));
 
 function Permit(access,requestpath){
-  console.log({access,requestpath})
 
+  let result = [access,...requestpath].reduce((current,next)=>{console.log(current);current?.[next]})
+  console.log(result)
 }
 function Authorization(req, res, next) {
   let path = req.path.split("/").filter((sample)=>sample)
