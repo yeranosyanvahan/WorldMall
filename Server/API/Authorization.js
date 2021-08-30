@@ -4,7 +4,7 @@ let config = yaml.load(require('fs').readFileSync('server.yaml'));
 
 function Permit(access,requestpath){
 
-  let result = [access,...requestpath].reduce((current,next)=>{console.log({current,next});current?.[next]})
+  let result = [access,...requestpath].reduce((current,next)=>{console.log({current,next});return current?.[next]})
   console.log({result})
 }
 function Authorization(req, res, next) {
