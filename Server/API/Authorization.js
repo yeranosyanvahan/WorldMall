@@ -2,7 +2,8 @@ const yaml = require('js-yaml');
 const jwt = require('jsonwebtoken');
 let config = yaml.load(require('fs').readFileSync('server.yaml'));
 
-function Permit(access,path){
+function Permit(access,requestpath){
+  console.log({acces,requestpath})
 
 }
 function Authorization(req, res, next) {
@@ -18,13 +19,8 @@ function Authorization(req, res, next) {
   else{
    jwt.verify(token, config.Secret , (err, token) => {
     console.log(err)
-    if (err | !Permit(token.access,) ) return res.sendStatus(403)
-
-    console.log("req.path ",req.path)
-    let  {access, data} = token
-    if (err ) return res.sendStatus(403)
-//    if (req.path in access) return res.sendStatus(403)
-    req.token = data
+    if (err | token.access | !Permit(token?.access,) ) return res.sendStatus(403)
+    req.token = token?.data
     next()
   })}
 }
