@@ -21,7 +21,7 @@ type Category {
 }
 
 type Product {
- product: String! @id @search(by: [term, fulltext])
+ product: String! @search(by: [term, fulltext])
  created_at: DateTime!
  category: Category
  property: [Property]

@@ -1,0 +1,5 @@
+mutation MyMutation {
+  addUser(input: {fname: "amazon", username: "amazon", created_at: "1999", password: "amazon"}) {
+    numUids
+  }
+}
