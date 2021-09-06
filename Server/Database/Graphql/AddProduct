@@ -1,0 +1,5 @@
+mutation MyMutation {
+  addProduct(input: {product: "FFf", created_at: "1999", category: {category: "fff"}}) {
+    numUids
+  }
+}

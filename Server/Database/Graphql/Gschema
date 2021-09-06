@@ -14,14 +14,14 @@ type Item implements Info {
 }
 
 type Category {
- category: String! @search(by: [trigram])  @id# search by laveshtain distance
+ category: String! @search(by: [trigram])  @id # search by laveshtain distance
  subcategory: [Category] @hasInverse(field: topcategory)
  topcategory: [Category]
  products: [Product] @hasInverse(field: category)
 }
 
 type Product {
- product: String! @search(by: [term, fulltext])
+ product: String! @id @search(by: [term, fulltext])
  created_at: DateTime!
  category: Category
  property: [Property]
