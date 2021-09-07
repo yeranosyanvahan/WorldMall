@@ -20,6 +20,7 @@ type Category {
 }
 
 type Product {
+ pid: ID !
  product: String! @search(by: [term, fulltext])
  created_at: DateTime!
  category: Category
@@ -32,7 +33,7 @@ type Property implements Info {
 }
 
 type Store implements Info {
-    store: String! @search(by: [trigram])      # and this
+    store: String! @id @search(by: [trigram])      # and this
     geolocation: Point!
     address: String
     city: City
