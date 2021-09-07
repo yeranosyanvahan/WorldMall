@@ -6,11 +6,11 @@ interface Info {
 # Define Types
 
 type Item implements Info {
-  product: Product!
+  product: Product! @hasInverse(field: pricing)
   store: Store!
   price: Int!
   discount: Int
-
+  pricehistory: [Int]
 }
 
 type Category {
@@ -24,16 +24,22 @@ type Product {
  product: String! @search(by: [term, fulltext])
  created_at: DateTime!
  category: Category
+ pricing: [Item]
  property: [Property]
 }
 
 type Property implements Info {
- property: String! @search(by: [trigram])   # and this
- products: [Product]! @hasInverse(field: property)
+ property: String! @search(by: [exact])  # and this
+ strs: [String]
+ ints: [Int]
+ floats: [Float]
+ geos: [Point]
+ datetime: [DateTime]
+ products: Product! @hasInverse(field: property)
 }
 
 type Store implements Info {
-    store: String! @search(by: [trigram])      # and this
+    store: String! @search(by: [trigram]) @id      # and this
     owner: User !
     geolocation: Point!
     address: String

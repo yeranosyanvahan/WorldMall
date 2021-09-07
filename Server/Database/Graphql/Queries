@@ -1,0 +1,15 @@
+query MyQuery {
+  queryProduct(filter: {product: {allofterms: "toy"}}) {
+    product
+    property {
+      property
+      strs
+    }
+    pricing {
+      price
+      store {
+        store
+      }
+    }
+  }
+}
