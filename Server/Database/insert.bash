@@ -12,3 +12,6 @@ curl -H "Content-Type: application/rdf" -X POST localhost:8080/mutate?commitNow=
 sleep 2s
 curl -X POST localhost:8080/admin/schema --data-binary @Graphql/Gschema
 curl -H "Content-Type: application/graphql" -X POST localhost:8080/graphql --data-binary @Graphql/AddCategory
+curl -H "Content-Type: application/graphql" -X POST localhost:8080/graphql --data-binary @Graphql/AddUser
+curl -H "Content-Type: application/graphql" -X POST localhost:8080/graphql --data-binary @Graphql/AddStore
+curl -H "Content-Type: application/graphql" -X POST localhost:8080/graphql --data-binary @Graphql/AddItem
