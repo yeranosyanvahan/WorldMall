@@ -5,7 +5,9 @@ Open Url:
   query:
    Autocomplete: True
    Search: True
+   Signin: True
   mutate:
+   SignUp: True
    Checkout: True
 
 #Frontend React app
@@ -19,4 +21,4 @@ Client:
 #Database
 Dgraph:
   hostname:
-    'http://localhost:8080'
+    'http://dgraph:8080'

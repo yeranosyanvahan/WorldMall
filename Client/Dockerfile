@@ -1,8 +1,9 @@
-FROM node:16.4 as build
+FROM node:16.4 as react
 WORKDIR /app
 COPY . ./
 RUN npm install -y
 RUN npm run build
+CMD npm start
 
 FROM httpd:2.4
 EXPOSE 80
@@ -50,4 +51,4 @@ ProxyVia Full \n\
 </VirtualHost> \n\
 " >> conf/extra/httpd-ssl.conf
 
-COPY --from=build /app/build /usr/local/apache2/htdocs/
+COPY --from=react /app/build /usr/local/apache2/htdocs/
