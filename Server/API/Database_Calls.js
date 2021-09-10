@@ -8,22 +8,35 @@ async function Fetch(body){
   'body': body})).json()}
 
 const Queries={
-  Autocomplete:({call})=>`{Autocomplete(func:match(category,"${call}",4)){expand(Category)}}`,
-  Search:({call})=> `{Search(func: alloftext(product,"${call}")){id:uid product stores{store}@facets(price:price)properties:~products{property}@facets(src:src)}}`
+Search:({call})=> `
+query Search {
+  queryProduct(filter: {product: {alloftext: "${call}"}}) {
+    product
+    pricing {price}
+    property {property strs}
+  }
+}
+`
 }
 async function Query(type, call) {
-  Queries[type] ? Queries[type](call): function(){throw(`Query ${type} is not specified`)}()
+  console.log(Queries[type] ? {"Query":Queries[type](call)} : `Query ${type} went wrong`)
+  return Queries[type] ? await Fetch(Queries[type](call)): function(){throw(`Query ${type} is not specified`)}()
 };
 
 
 let now = "2019-03-28T14:00:00-06:00"
 
 const Mutations={
-  AddUser: ({name, created_at, username, password}) => `mutation {  addUser(input: {name: "${name}", created_at: "${created_at}", username: "${username}", password: "${password}"}) {numUids}}`
+  AddUser: ({name, created_at, username, password}) => `
+mutation addUser {
+  addUser(input: {fname: "${name}", username: "${username}", created_at: "${created_at}", password: "${password}"}) {
+    numUids
+  }
 }
+`}
 
 async function Mutate(type, call) {
-  Mutations[type] ? Mutations[type](call): function(){throw(`Mutation ${type} is not specified`)}()
+  Mutations[type] ? await Fetch(Mutations[type](call)): function(){throw(`Mutation ${type} is not specified`)}()
 };
 
 module.exports = {Query, Mutate}
