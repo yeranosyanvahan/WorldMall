@@ -3,7 +3,6 @@ WORKDIR /app
 COPY . ./
 RUN npm install -y
 RUN npm run build
-CMD npm start
 
 FROM httpd:2.4
 EXPOSE 80
