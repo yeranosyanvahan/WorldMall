@@ -1,0 +1,35 @@
+version: "3.4"
+
+services:
+  client:
+    build:
+      context: './Client'
+      
+    ports:
+      - 80:80
+      - 443:443
+    restart: on-failure
+    links:
+     - api
+    volumes:
+      - ./Certificates/server.key:/usr/local/apache2/conf/server.key
+      - ./Certificates/server.crt:/usr/local/apache2/conf/server.crt
+      - ./Config/config.json:/app/src/config.json
+
+  api:
+    build:
+      context: './Server'
+      dockerfile: API-Dockerfile
+    ports:
+      - 4000:4000
+    restart: on-failure
+    links:
+     - dgraph
+    depends_on:
+     - dgraph
+
+  dgraph:
+    build:
+      context: './Server'
+      dockerfile: Database-Dockerfile
+    restart: on-failure
