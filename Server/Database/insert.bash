@@ -10,6 +10,7 @@ echo "}}" >> ./DQL/Mutation
 curl -H "Content-Type: application/rdf" -X POST localhost:8080/mutate?commitNow=true --data-binary @DQL/Mutation
 
 sleep 2s
+echo "Start Adding GraphQL"
 curl -X POST localhost:8080/admin/schema --data-binary @Graphql/Gschema
 curl -H "Content-Type: application/graphql" -X POST localhost:8080/graphql --data-binary @Graphql/AddCategory
 curl -H "Content-Type: application/graphql" -X POST localhost:8080/graphql --data-binary @Graphql/AddUser
