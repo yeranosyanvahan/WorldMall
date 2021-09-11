@@ -25,10 +25,12 @@ async function Query(type, call) {
 let now = "2019-03-28T14:00:00-06:00"
 
 const Mutations = {
-  SignUp: ({name, created_at, username, password}) => `mutation addUser {  addUser(input: {fname: "${name}", username: "${username}", created_at: "${created_at}", password: "${password}"}){numUids}}`}
+  SignUp: ({name, created_at, username, password}) => `mutation addUser {  addUser(input: {fname: "${name}", username: "${username}", created_at: "${created_at}", password: "${password}"}){numUids}}`
+}
 
 async function Mutate(type, call) {
-  if(!Mutations?.[type]?.(call)) return {"error": "Invalid Mutation"}
+  if(!Mutations?.[type]) return {"error": "Invalid Mutation"}
+  if(!Mutations?.[type]?.(call)) return {"error": "Invalid parameters"}
   return await Mutations(Mutations[type](call))
 };
 
