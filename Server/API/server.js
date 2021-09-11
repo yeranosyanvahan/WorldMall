@@ -53,10 +53,10 @@ app.post("/signup", (req, res) => {
 
 app.post('/query/:type', Authorization, async function({token, params:{type}, body}, res){
   try {
-    let {error,data} = await Query(type,{...body, ...token})
-    if(error) {
-      console.log(error);
-      res.send(...(error==="Invalid Query" ? ["Invalid Query",404] : [error,400]))
+    let {errors,data} = await Query(type,{...body, ...token})
+    if(errors) {
+      console.log(errors);
+      res.send(...(errors==="Invalid Query" ? ["Invalid Query",404] : [errors,400]))
     }
     else {res.send(data)}
   }
@@ -68,10 +68,10 @@ app.post('/query/:type', Authorization, async function({token, params:{type}, bo
 
 app.post('/mutate/:type', Authorization, async function({token, params:{type}, body}, res){
   try {
-    let {error,data} = await Mutate(type,{...body, ...token})
-    if(error) {
-      console.log(error);
-      res.send(...(error==="Invalid Mutation" ? ["Invalid Mutation",404] : [error,400]))
+    let {errors,data} = await Mutate(type,{...body, ...token})
+    if(errors) {
+      console.log(errors);
+      res.send(...(errors==="Invalid Mutation" ? ["Invalid Mutation",404] : [errors,400]))
     }
     else {res.send(data)}
   }
