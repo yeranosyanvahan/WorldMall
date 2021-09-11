@@ -9,8 +9,7 @@ async function Fetch(body){
 
 const Queries={
 Search:({call})=> `
-query Search {
-  queryProduct(filter: {product: {alloftext: "${call}"}}) {
+query Search {  queryProduct(filter: {product: {alloftext: "${call}"}}) {
     product
     pricing {price}
     property {property strs}
@@ -23,17 +22,10 @@ async function Query(type, call) {
   return await Fetch(Queries[type](call))
 };
 
-
 let now = "2019-03-28T14:00:00-06:00"
 
-const Mutations={
-  AddUser: ({name, created_at, username, password}) => `
-mutation addUser {
-  addUser(input: {fname: "${name}", username: "${username}", created_at: "${created_at}", password: "${password}"}) {
-    numUids
-  }
-}
-`}
+const Mutations = {
+  SignUp: ({name, created_at, username, password}) => `mutation addUser {  addUser(input: {fname: "${name}", username: "${username}", created_at: "${created_at}", password: "${password}"}){numUids}}`}
 
 async function Mutate(type, call) {
   if(!Mutations?.[type]?.(call)) return {"error": "Invalid Mutation"}
