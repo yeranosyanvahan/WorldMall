@@ -55,7 +55,7 @@ app.post('/query/:type', Authorization, async function({token, params:{type}, bo
   try {
     let {error,data} = await Query(type,{...body, ...token})
     if(error) {
-      res.send(error==="Invalid Query" ? ...{error,404} : ...{"",400}
+      res.send(error==="Invalid Query" ? ...[error,404] : ...["",400])
       console.log(error);res.sendStatus()
     }
     else {res.send(data)}
