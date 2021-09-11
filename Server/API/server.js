@@ -68,10 +68,10 @@ app.post('/query/:type', Authorization, async function({token, params:{type}, bo
 
 app.post('/mutate/:type', Authorization, async function({token, params:{type}, body}, res){
   try {
-    let {error,data} = await Query(type,{...body, ...token})
+    let {error,data} = await Mutate(type,{...body, ...token})
     if(error) {
       console.log(error);
-      res.send(...(error==="Invalid Query" ? [error,404] : ["",400]))
+      res.send(...(error==="Invalid Mutation" ? [error,404] : ["",400]))
     }
     else {res.send(data)}
   }

@@ -36,7 +36,8 @@ mutation addUser {
 `}
 
 async function Mutate(type, call) {
-  Mutations[type] ? await Fetch(Mutations[type](call)): function(){throw(`Mutation ${type} is not specified`)}()
+  if(!Mutations?.[type]?.(call)) return {"error": "Invalid Mutation"}
+  return await Mutations(Mutations[type](call))
 };
 
 module.exports = {Query, Mutate}
