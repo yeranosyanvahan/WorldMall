@@ -18,8 +18,8 @@ query Search {  queryProduct(filter: {product: {alloftext: "${call}"}}) {
 `
 }
 async function Query(type, call) {
-  if(!Queries?.[type]) return {"error": "Invalid Query"}
-  if(!Queries?.[type]?.(call)) return {"error": "Invalid parameters"}
+  if(!Queries?.[type]) return {"errors": "Invalid Query"}
+  if(!Queries?.[type]?.(call)) return {"errors": "Invalid parameters"}
   return await Fetch(Queries[type](call))
 };
 
@@ -30,8 +30,8 @@ const Mutations = {
 }
 
 async function Mutate(type, call) {
-  if(!Mutations?.[type]) return {"error": "Invalid Mutation"}
-  if(!Mutations?.[type]?.(call)) return {"error": "Invalid parameters"}
+  if(!Mutations?.[type]) return {"errors": "Invalid Mutation"}
+  if(!Mutations?.[type]?.(call)) return {"errors": "Invalid parameters"}
   return await Fetch(Mutations[type](call))
 };
 
