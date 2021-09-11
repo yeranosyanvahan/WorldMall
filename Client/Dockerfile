@@ -15,6 +15,8 @@ RUN sed -i \
         -e 's/^#\(LoadModule .*mod_rewrite.so\)/\1/' \
         -e 's/^#\(LoadModule .*mod_proxy.so\)/\1/' \
         -e 's/^#\(LoadModule .*mod_proxy_http.so\)/\1/' \
+        -e 's/ServerAdmin you@example.com/ServerAdmin admin@miom.am/g"
+        -e 's/#ServerName www.example.com:80/sell.miom.am/g'
         conf/httpd.conf
 
 RUN sed -e "s/<\/VirtualHost>//g" -i conf/extra/httpd-ssl.conf
