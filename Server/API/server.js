@@ -55,8 +55,8 @@ app.post('/query/:type', Authorization, async function({token, params:{type}, bo
   try {
     let {error,data} = await Query(type,{...body, ...token})
     if(error) {
-      res.send(error==="Invalid Query" ? ...[error,404] : ...["",400])
-      console.log(error);res.sendStatus()
+      console.log(error);
+      res.send(...(error==="Invalid Query" ? [error,404] : ["",400]))
     }
     else {res.send(data)}
   }
@@ -70,8 +70,8 @@ app.post('/mutate/:type', Authorization, async function({token, params:{type}, b
   try {
     let {error,data} = await Query(type,{...body, ...token})
     if(error) {
-      res.send(error==="Invalid Query" ? ...{error,404} : ...{"",400}
-      console.log(error);res.sendStatus()
+      console.log(error);
+      res.send(...(error==="Invalid Query" ? [error,404] : ["",400]))
     }
     else {res.send(data)}
   }
