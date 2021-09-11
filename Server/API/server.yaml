@@ -1,7 +1,7 @@
 Secret: "secret"
 Certificates:
-  key: "your key"
-  crt: "your crt"
+  key: "your key location"
+  crt: "your crt loaction"
 Server:
   Port: 4000
 Open Url:
