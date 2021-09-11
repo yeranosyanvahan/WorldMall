@@ -68,8 +68,8 @@ app.post('/mutate/:type', Authorization, async function({token, params:{type}, b
 try{
  console.log("Starting HTTPS server on port: ", config.Server.Port)
  Certs = {
-      key: fs.readFileSync( './Certificates/server.key' ),
-      cert: fs.readFileSync( './Certificates/server.crt' )
+      key: fs.readFileSync( config.Certificates.key ),
+      cert: fs.readFileSync( config.Certificates.crt )
   }
  console.log(Certs)
  https.createServer(Certs, app).listen(config.Server.Port);
