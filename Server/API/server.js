@@ -70,6 +70,8 @@ try{
  console.log("Trying to read key")
  let key = fs.readFileSync( config.Certificates.key )
  console.log(key)
+ let crt = fs.readFileSync( config.Certificates.crt )
+ console.log(crt)
  Certs = {
       key: fs.readFileSync( config.Certificates.key ),
       cert: fs.readFileSync( config.Certificates.crt )
