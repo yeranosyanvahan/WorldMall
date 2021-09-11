@@ -51,17 +51,22 @@ app.post("/signup", (req, res) => {
      }
     });
 
-app.post('/query/:type', Authorization, async function(req, res){
-  const {token, params:{type}, body} = req
-  console.log("path",req.path.split("/").filter((sample)=>sample))
-  let data = await Query(type,{...body, ...token})
-  console.log(data)
-  res.json(data.data)
+app.post('/query/:type', Authorization, async function({token, params:{type}, body}, res){
+  try {
+    res.json(await Query(type,{...body, ...token}))
+  }
+  catch(e) {
+    res.send(e,300)
+  }
 });
 
 app.post('/mutate/:type', Authorization, async function({token, params:{type}, body}, res){
-  let {data} = Mutate(type,{...body, ...token})
-  res.json(data)
+  try {
+    res.json(await Query(type,{...body, ...token}))
+  }
+  catch(e) {
+    res.send(e,300)
+  }
 });
 
 // Start the server
