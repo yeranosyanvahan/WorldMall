@@ -53,19 +53,31 @@ app.post("/signup", (req, res) => {
 
 app.post('/query/:type', Authorization, async function({token, params:{type}, body}, res){
   try {
-    res.json(await Query(type,{...body, ...token}))
+    let {error,data} = await Query(type,{...body, ...token})
+    if(error) {
+      res.send(error==="Invalid Query" ? ...{error,404} : ...{"",400}
+      console.log(error);res.sendStatus()
+    }
+    else {res.send(data)}
   }
   catch(e) {
-    res.send(e,300)
+    console.log(e)
+    res.sendStatus(503)
   }
 });
 
 app.post('/mutate/:type', Authorization, async function({token, params:{type}, body}, res){
   try {
-    res.json(await Query(type,{...body, ...token}))
+    let {error,data} = await Query(type,{...body, ...token})
+    if(error) {
+      res.send(error==="Invalid Query" ? ...{error,404} : ...{"",400}
+      console.log(error);res.sendStatus()
+    }
+    else {res.send(data)}
   }
   catch(e) {
-    res.send(e,300)
+    console.log(e)
+    res.sendStatus(503)
   }
 });
 

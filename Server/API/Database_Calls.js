@@ -19,8 +19,8 @@ query Search {
 `
 }
 async function Query(type, call) {
-  console.log(Queries[type] ? {"Query":Queries[type](call)} : `Query ${type} went wrong`)
-  return Queries[type] ? await Fetch(Queries[type](call)): function(){throw(`Query ${type} is not specified`)}()
+  if(!Queries?.[type]?.(call)) return {"error": "Invalid Query"}
+  return await Fetch(Queries[type](call))
 };
 
 
