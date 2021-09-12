@@ -1,6 +1,6 @@
 const bcrypt = require("bcryptjs");
 const jwt = require('jsonwebtoken')
-const {Query, Mutate}= require('./Database_Calls')
+const {Query, Mutate} = require('./Database')
 let config = require('js-yaml').load(require('fs').readFileSync('server.yaml'));
 
 async function Signin(username, password) {

@@ -8,7 +8,7 @@ var http = require('http');
 var https = require('https');
 const {Signin, Signup} = require("./Authentication")
 const Authorization = require("./Authorization")
-const {Query, Mutate}= require('./Database_Calls')
+const {Query, Mutate}= require('./Database')
 const app = express();
 
 // Reading Config Files
