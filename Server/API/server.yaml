@@ -10,7 +10,7 @@ Open Url:
    Search: True
    Signin: True
   mutate:
-   SignUp: True
+   Signup: True
    Checkout: True
 
 #Frontend React app

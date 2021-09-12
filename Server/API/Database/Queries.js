@@ -1,4 +1,4 @@
-const Queries={Search}
+const Queries={Search, SignIn}
 
 function Search({call}) {
   return  `
@@ -10,6 +10,7 @@ function Search({call}) {
   }
   `
 }
+
 function SignIn({username,password}) {
 return `  query Signin {
   checkUserPassword(username: "${username}",password:"${password}") {
@@ -17,4 +18,5 @@ return `  query Signin {
   }
 }`
 }
+
 module.exports= Queries
