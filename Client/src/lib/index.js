@@ -12,6 +12,6 @@ import {Store, Dispatch} from './Redux.js'
 //const API = async(Call)=>{return import('./API.js').then(({default:API})=>{return API(Call)})};
 //import API from './API.js'
 
-async function API (...args) {  const {default:api} = await import('./API.js');  return api(...args) }
+async function API (...args) {  const {default:api} = await import('./API');  return api(...args) }
 
 export {Product, API, Nav, SearchBar ,Footer, Submit, Store, Dispatch}

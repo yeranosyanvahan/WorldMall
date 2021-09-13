@@ -3,6 +3,7 @@ const Queries={Search, SignIn}
 function Search({call}) {
   return  `
   query Search {  queryProduct(filter: {product: {alloftext: "${call}"}}) {
+      id
       product
       pricing {price}
       property {property strs}
