@@ -1,5 +1,5 @@
 mutation MyMutation {
-  addStore(input: {store: "amazon", owner: {username: "amazon"}, geolocation: {longitude: 1.5, latitude: 1.5}}) {
+  addStore(input: {store: "amazon", created_at:"1999", owner: {username: "amazon"}, geolocation: {longitude: 1.5, latitude: 1.5}}) {
     numUids
   }
 }
